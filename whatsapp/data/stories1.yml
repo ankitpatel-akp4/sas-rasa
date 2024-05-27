@@ -1,0 +1,46 @@
+
+version: "3.1"
+stories:
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: apply_loan
+  - action: utter_apply_loan
+  - intent: apply_loan
+    entities:
+    - loan_type: home loan
+  - slot_was_set:
+    - loan_type: home loan
+  - action: action_default_fallback
+  - intent: apply_loan
+    entities:
+    - loan_type: home loan
+    - duration: '6'
+    - duration: '500000'
+  - slot_was_set:
+    - loan_type: home loan
+  - slot_was_set:
+    - duration: '500000'
+  - intent: apply_loan
+    entities:
+    - loan_type: home loan
+    - duration: '6'
+    - amount: '500000'
+  - action: action_apply_loan
+  - intent: apply_loan
+    entities:
+    - loan_type: home loan
+    - duration: '10000'
+    - duration: 6 years
+  - slot_was_set:
+    - loan_type: home loan
+  - slot_was_set:
+    - duration: 6 years
+  - intent: apply_loan
+    entities:
+    - loan_type: home loan
+    - amount: '10000'
+    - duration: 6 years
+  - action: action_apply_loan
+  - action: action_apply_loan

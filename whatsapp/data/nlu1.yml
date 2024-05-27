@@ -1,0 +1,11 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+- intent: apply_loan
+  examples: |
+    - I need a loan.
+    - I need [home loan](loan_type) for [6](duration) months of [500000](amount) dollars.
+    - I want to apply [home loan](loan_type) of [10000](amount) rs for [6 years](duration).
+    

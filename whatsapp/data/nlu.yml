@@ -1,0 +1,68 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Hey
+    - Good morning
+    - Good evening
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - See you later
+    - Have a nice day
+
+- intent: thanks
+  examples: |
+    - Thanks
+    - Thank you
+    - I appreciate it
+    - Thanks a lot
+
+- intent: apply_loan
+  examples: |
+    - I want to apply for a loan
+    - How can I get a loan?
+    - I need a [home loan](loan_type)
+    - Can I apply for a [personal loan](loan_type)?
+    - I want to borrow [50000](amount) dollars
+    - Can I get a loan for [2 years](duration)?
+    - I need a [car loan](loan_type) for [3 years](duration)
+    - I need a loan of [100000](amount) for [5 years](duration)
+
+- intent: loan_status
+  examples: |
+    - What is the status of my loan application?
+    - How is my loan application going?
+    - Check my loan status
+    - Can you tell me the status of my loan?
+    - I want to know the status of my loan application
+
+- intent: loan_repayment
+  examples: |
+    - How do I repay my loan?
+    - Tell me about loan repayment
+    - What are the repayment options?
+    - How can I repay my [home loan](loan_type)?
+    - Repayment details for my [personal loan](loan_type)
+    - Loan repayment terms for [50000](amount) dollars loan
+    - What is the repayment schedule for [3 years](duration)?
+
+- intent: interest_rates
+  examples: |
+    - What are the current interest rates?
+    - Tell me about the interest rates for loans
+    - What is the interest rate for a [home loan](loan_type)?
+    - How much interest will I pay for a [personal loan](loan_type)?
+    - Interest rates for a loan of [100000](amount) dollars
+    - What are the current interest rates for [5 years](duration)?
+
+- intent: inform
+  examples: |
+    - My name is [John Doe](name)
+    - I want to borrow [20000](amount) dollars
+    - I need a loan for [2 years](duration)
+    - I am looking for a [car loan](loan_type)
