@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-day_of_week",
+      "2": "I-day_of_week",
+      "3": "L-day_of_week",
+      "4": "U-day_of_week",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-day_of_week": 1,
+      "I-day_of_week": 2,
+      "L-day_of_week": 3,
+      "U-day_of_week": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]

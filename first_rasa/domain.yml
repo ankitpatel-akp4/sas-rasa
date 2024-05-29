@@ -1,34 +1,66 @@
 version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - book_appointment
+  - choose_doctor_by_name
+  - choose_doctor_by_number
+
+entities:
+  - doctor
+  - doctor_number
+
+slots:
+  doctor:
+    type: text
+    mappings:
+      - type: from_text
+        entity: doctor
+        intent: choose_doctor_by_name
+        not_intent: nlu_fallback
+      - type: from_text
+        entity: doctor_number
+        intent: choose_doctor_by_number
+        not_intent: nlu_fallback
+    influence_conversation: false
+  appointment_date:
+    type: text
+    mappings:
+      - type: from_text
+        entity: appointment_date
+        intent: inform
+        not_intent: nlu_fallback
+    influence_conversation: false
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_show_doctors:
+    - text: "Please choose a doctor for your appointment:\n1. Dr. Smith\n2. Dr. Brown\n3. Dr. Patel\n4. Dr. Lee"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_confirm_doctor:
+    - text: "You have chosen {doctor}. When would you like to schedule your appointment?"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_ask_doctor:
+    - text: "Please choose a doctor from the list:\n1. Dr. Smith\n2. Dr. Brown\n3. Dr. Patel\n4. Dr. Lee"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_ask_appointment_date:
+    - text: "When would you like to schedule your appointment?"
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_submit:
+    - text: "Your appointment with {doctor} has been booked for {appointment_date}."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+forms:
+  book_appointment_form:
+    required_slots:
+      doctor:
+        - type: from_text
+          entity: doctor
+          intent: choose_doctor_by_name
+          not_intent: nlu_fallback
+        - type: from_text
+          entity: doctor_number
+          intent: choose_doctor_by_number
+          not_intent: nlu_fallback
+      appointment_date:
+        - type: from_text
+          entity: appointment_date
+          intent: inform
+          not_intent: nlu_fallback
