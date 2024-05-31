@@ -23,22 +23,22 @@ stories:
       - intent: goodbye
       - action: utter_goodbye
 
-  # - story: book an appointment without specific time
-  #   steps:
-  #     - intent: greet
-  #     - action: action_greet
-  #     - intent: book_appointment
-  #       entities:
-  #         - doctor: "Dr. Johnson"
-  #     - action: utter_ask_time
-  #     - intent: inform_time
-  #       entities:
-  #         - time: "next Monday morning"
-  #     - action: utter_confirm_appointment
-  #     - intent: affirm
-  #     - action: utter_thank
-  #     - intent: goodbye
-  #     - action: utter_goodbye
+  - story: book an appointment without specific time
+    steps:
+      - intent: greet
+      - action: action_greet
+      - intent: book_appointment
+        entities:
+          - doctor: "Dr. Johnson"
+      - action: utter_ask_time
+      - intent: inform_time
+        entities:
+          - time: "next Monday morning"
+      - action: utter_confirm_appointment
+      - intent: affirm
+      - action: utter_thank
+      - intent: goodbye
+      - action: utter_goodbye
 
   - story: inquire and book an appointment
     steps:
@@ -63,39 +63,6 @@ stories:
       - action: utter_thank
       - intent: goodbye
       - action: utter_goodbye
-
-  - story: inquire and not book an appointment
-    steps:
-      - intent: greet
-      - action: action_greet
-      - action: utter_list_doctors
-      - intent: inquire_doctors
-      - action: utter_list_doctors
-      - intent: deny
-      - action: utter_thank
-      - intent: goodbye
-      - action: utter_goodbye
-
-  # - story: inquire and book an appointment
-  #   steps:
-  #     - intent: greet
-  #     - action: action_greet
-  #     - intent: inquire_doctors
-  #     - action: utter_list_doctors
-  #     - intent: book_appointment
-  #       entities:
-  #         - doctor: "Dr. Smith"
-  #     - action: utter_ask_time
-  #     - intent: inform_time
-  #       entities:
-  #         - time: "Friday"
-  #     - action: action_check_availability
-  #     - intent: affirm
-  #     - action: utter_confirm_appointment
-  #     - intent: affirm
-  #     - action: utter_thank
-  #     - intent: goodbye
-  #     - action: utter_goodbye
 
   - story: inquire and provide alternative time
     steps:
@@ -137,5 +104,4 @@ stories:
       - action: utter_thank
       - intent: goodbye
       - action: utter_goodbye
-
 

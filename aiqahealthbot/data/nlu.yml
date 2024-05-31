@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - cu
@@ -29,7 +27,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -42,7 +39,6 @@ nlu:
     - Sounds good
     - Okay
     - Sure
-
 - intent: deny
   examples: |
     - no
@@ -54,15 +50,11 @@ nlu:
     - not really
     - Not right now
     - Maybe later
-    - I don't think so
-    
-
 - intent: thank
   examples: |
     - Thank you
     - Thanks
     - Appreciate it
-
 - intent: mood_great
   examples: |
     - perfect
@@ -79,7 +71,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -96,16 +87,12 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
-
-
 - intent: book_appointment
   examples: |
     - I want to book an appointment
@@ -129,18 +116,6 @@ nlu:
     - Can I schedule an appointment with a pediatrician for my child?
     - I need to see [Dr. White](doctor).
     - I need to book an appointment with [Dr. Kim](doctor).
-    - I need to book an appointment with [Dr. Smith](doctor).
-    - Can I schedule an appointment with [Dr. Johnson](doctor)?
-    - I'd like to see [Dr. Green](doctor).
-    - I need an appointment with [Dr. Williams](doctor).
-    - Can I book an appointment with [Dr. Patel](doctor)?
-    - Is [Dr. Lee](doctor) available for an appointment?
-    - I need to book a follow-up with [Dr. Taylor](doctor).
-    - I need to see [Dr. White](doctor).
-    - I need to book an appointment with [Dr. Kim](doctor).
-
-
-
 - intent: inform_time
   examples: |
     - How about [Friday](day)?
@@ -153,18 +128,6 @@ nlu:
     - I would like to come in [Thursday afternoon](time).
     - Is [tomorrow afternoon](time) available?
     - How about [next Monday morning](time)?
-    - How about [Friday](day)?
-    - Is there any availability [this weekend](time)?
-    - Can I get an appointment on [Wednesday](day)?
-    - I need an appointment [next Monday morning](time).
-    - Is [Friday afternoon](time) available?
-    - How about [Tuesday morning](time)?
-    - Do you have any openings [this week](time)?
-    - I would like to come in [Thursday afternoon](time).
-    - Is [tomorrow afternoon](time) available?
-    - How about [next Monday morning](time)?
-
-
 - intent: inform_time_specific
   examples: |
     - [10:00 AM](time)
@@ -176,8 +139,6 @@ nlu:
     - [2:30 PM](time)
     - [10:30 AM](time)
     - [11:30 AM](time)
-    - [3:00 PM](time)
-
 - intent: inquire_doctors
   examples: |
     - Can you tell me the available doctors?

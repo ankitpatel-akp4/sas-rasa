@@ -1,8 +1,0 @@
-version: "3.1"
-nlu:
-- intent: greet
-  examples: |
-    - hi
-- intent: book_appointment
-  examples: |
-    - I'd like to make an appointment

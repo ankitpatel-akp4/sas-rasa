@@ -53,3 +53,19 @@ class ActionCheckAvailability(Action):
             dispatcher.utter_message(template="utter_ask_alternative_time")
             return [SlotSet("time", None)]
 
+
+class ActionBookAppoinment(Action):
+    
+    def name(self) -> Text:
+        return "action_book_appointment"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        tracker.get_slot()
+        logging.info("action_book_appointment tracker: {}".format(tracker))
+        logging.info("action_book_appointment tracker: {}".format(tracker))
+        dispatcher.utter_custom_message({"msg":"hello form action", "tracker": tracker})
+        return []
+    
+    
