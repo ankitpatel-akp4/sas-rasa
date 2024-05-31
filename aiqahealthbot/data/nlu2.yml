@@ -1,0 +1,14 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+- intent: inform_time_specific
+  examples: |
+    - [6:30 pm](time)
+- intent: affirm
+  examples: |
+    - yes
+- intent: goodbye
+  examples: |
+    - thanks bye

@@ -38,6 +38,10 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - That works
+    - Sounds good
+    - Okay
+    - Sure
 
 - intent: deny
   examples: |
@@ -48,6 +52,16 @@ nlu:
     - don't like that
     - no way
     - not really
+    - Not right now
+    - Maybe later
+    - I don't think so
+    
+
+- intent: thank
+  examples: |
+    - Thank you
+    - Thanks
+    - Appreciate it
 
 - intent: mood_great
   examples: |
@@ -105,33 +119,69 @@ nlu:
     - Can I book an appointment for tomorrow?
     - I need an appointment on [Monday](day_of_week)
     - Is there an available slot for an appointment?
+    - I need to book an appointment with [Dr. Smith](doctor).
+    - Can I schedule an appointment with [Dr. Johnson](doctor)?
+    - I'd like to see [Dr. Green](doctor).
+    - I need an appointment with [Dr. Williams](doctor).
+    - Can I book an appointment with [Dr. Patel](doctor)?
+    - Is [Dr. Lee](doctor) available for an appointment?
+    - I need to book a follow-up with [Dr. Taylor](doctor).
+    - Can I schedule an appointment with a pediatrician for my child?
+    - I need to see [Dr. White](doctor).
+    - I need to book an appointment with [Dr. Kim](doctor).
+    - I need to book an appointment with [Dr. Smith](doctor).
+    - Can I schedule an appointment with [Dr. Johnson](doctor)?
+    - I'd like to see [Dr. Green](doctor).
+    - I need an appointment with [Dr. Williams](doctor).
+    - Can I book an appointment with [Dr. Patel](doctor)?
+    - Is [Dr. Lee](doctor) available for an appointment?
+    - I need to book a follow-up with [Dr. Taylor](doctor).
+    - I need to see [Dr. White](doctor).
+    - I need to book an appointment with [Dr. Kim](doctor).
 
 
-- intent: choose_number
+
+- intent: inform_time
   examples: |
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
-    - 10
-    - 11
-    - i
-    - ii
-    - iii
-    - iv
-    - v
-    - vi
-    - vii
-    - viii
-    - ix
-    - x
+    - How about [Friday](day)?
+    - Is there any availability [this weekend](time)?
+    - Can I get an appointment on [Wednesday](day)?
+    - I need an appointment [next Monday morning](time).
+    - Is [Friday afternoon](time) available?
+    - How about [Tuesday morning](time)?
+    - Do you have any openings [this week](time)?
+    - I would like to come in [Thursday afternoon](time).
+    - Is [tomorrow afternoon](time) available?
+    - How about [next Monday morning](time)?
+    - How about [Friday](day)?
+    - Is there any availability [this weekend](time)?
+    - Can I get an appointment on [Wednesday](day)?
+    - I need an appointment [next Monday morning](time).
+    - Is [Friday afternoon](time) available?
+    - How about [Tuesday morning](time)?
+    - Do you have any openings [this week](time)?
+    - I would like to come in [Thursday afternoon](time).
+    - Is [tomorrow afternoon](time) available?
+    - How about [next Monday morning](time)?
 
-- intent: choose_doctor
+
+- intent: inform_time_specific
   examples: |
-    - dr patel
-    - would like to go with doctor jo
+    - [10:00 AM](time)
+    - [2:00 PM](time)
+    - [3:00 PM](time)
+    - [9:30 AM](time)
+    - [11:00 AM](time)
+    - [1:00 PM](time)
+    - [2:30 PM](time)
+    - [10:30 AM](time)
+    - [11:30 AM](time)
+    - [3:00 PM](time)
+
+- intent: inquire_doctors
+  examples: |
+    - Can you tell me the available doctors?
+    - Who are the doctors I can book an appointment with?
+    - I'd like to know which doctors are available.
+    - Can you list all the available doctors?
+    - Who are the available doctors?

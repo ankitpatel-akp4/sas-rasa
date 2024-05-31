@@ -10,7 +10,7 @@ assistant_id: 20240529-002018-sienna-chart
 # https://rasa.com/docs/rasa/nlu/components/
 language: en
 
-pipeline: 
+pipeline: null
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
@@ -32,13 +32,13 @@ pipeline:
 #   - name: FallbackClassifier
 #     threshold: 0.3
 #     ambiguity_threshold: 0.1
-  - name: FallbackClassifier
-    threshold: 0.3
-    ambiguity_threshold: 0.1
+  # - name: FallbackClassifier
+  #   threshold: 0.3
+  #   ambiguity_threshold: 0.1
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
-policies: 
+policies: null
 # # No configuration for policies was provided. The following default policies were used to train your model.
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.
@@ -51,10 +51,10 @@ policies:
 #     max_history: 5
 #     epochs: 100
 #     constrain_similarities: true
-  - name: RulePolicy
-    core_fallback_threshold: 0.4
-    core_fallback_action_name: "action_default_fallback"
-    enable_fallback_prediction: True
+  # - name: RulePolicy
+  #   core_fallback_threshold: 0.4
+  #   core_fallback_action_name: "action_default_fallback"
+  #   enable_fallback_prediction: True
 
 #   - name: UnexpecTEDIntentPolicy
 #     max_history: 5
