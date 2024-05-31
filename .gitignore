@@ -1,2 +1,5 @@
 .venv
 .mypy_cache
+*/models/
+*/.rasa/
+*/actions/__pycache__/
