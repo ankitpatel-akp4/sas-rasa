@@ -1,0 +1,37 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - inform_symptoms
+
+responses:
+  utter_hello:
+  - text: Hello! How are you today?
+
+  utter_great_mood:
+  - text: happy to hear that!
+
+  utter_not_feeling_well:
+  - text: sorry to hear that. what's the issue?
+
+  uttet_ask_feeling:
+  - text: how are you feeling today?
+
+  utter_send_temp:
+  - text: sending temp
+
+
+
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

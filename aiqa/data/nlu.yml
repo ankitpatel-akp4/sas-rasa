@@ -1,0 +1,240 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - okey
+    - ok
+    - I am good
+    - I am feeling well
+    
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - no
+    - i am not feeling well
+  
+    
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: inform_symptoms
+  examples: |
+    - I have a sore throat and a fever
+    - My symptoms include a headache and nausea
+    - I am experiencing chest pain and shortness of breath
+    - I feel dizzy and have a stomach ache
+    - My symptoms are a cough and a runny nose
+    - I have a high fever and body aches
+    - I'm feeling weak and have a sore throat
+    - I have a cold and a persistent cough
+    - fever
+    - I am not feeling well. I am having cold.
+    - I have a fever
+    - I am feeling feverish
+    - I have a high temperature
+    - My temperature is high
+    - I have chills
+    - I am experiencing chills
+    - I am shivering
+    - I am sweating a lot
+    - I am sweating more than usual
+    - I have been sweating a lot
+    - I feel weak
+    - I am feeling weak
+    - I feel very tired
+    - I am feeling more tired than usual
+    - I have a sore throat
+    - I am experiencing a sore throat
+    - I have a cough
+    - I have been coughing a lot
+    - I have a cold
+    - My nose is runny
+    - I have a runny nose
+    - My throat hurts
+    - My throat is sore
+    - I have body aches
+    - I have muscle aches
+    - My body hurts
+    - My muscles are aching
+    - I have a headache
+    - My head hurts
+    - I have a migraine
+    - I have been feeling dizzy
+    - I feel dizzy
+    - I have nausea
+    - I am feeling nauseous
+    - I have been vomiting
+    - I have been throwing up
+    - I have a rash
+    - I have a skin rash
+    - I have red spots on my skin
+    - My skin is itchy
+    - I have itchy skin
+    - I have a stomach ache
+    - My stomach hurts
+    - I have diarrhea
+    - I have been having diarrhea
+    - I have constipation
+    - I am constipated
+    - I have back pain
+    - My back hurts
+    - I have chest pain
+    - My chest hurts
+    - I have shortness of breath
+    - I am having trouble breathing
+    - I have been coughing up blood
+    - I have blood in my urine
+    - I have been losing weight
+    - I have lost a lot of weight
+    - I have gained a lot of weight
+    - I have high blood pressure
+    - My blood pressure is high
+    - I have low blood pressure
+    - My blood pressure is low
+    - I have high blood sugar
+    - My blood sugar is high
+    - I have low blood sugar
+    - My blood sugar is low
+    - I have been feeling anxious
+    - I am feeling anxious
+    - I have been feeling depressed
+    - I am feeling depressed
+    - I have insomnia
+    - I can't sleep
+    - I have been having trouble sleeping
+    - I have been feeling nauseated
+    - I have blurred vision
+    - My vision is blurry
+    - I have been feeling confused
+    - I have been feeling disoriented
+    - I have a lump
+    - I have a swelling
+    - I have a swollen chest
+    - My chest is swollen
+    - I have a burning sensation
+    - I have tingling
+    - I have numbness
+    - My hand is numb.
+    - My foot is numb.
+    - My leg is numb.
+    - My arm is numb.
+    - My fingers are numb.
+    - My toes are numb.
+    - My face is numb.
+    - My back is numb.
+    - My shoulder is numb.
+    - My neck is numb.
+    - fever
+    - headache
+    - nausea
+    - dizziness
+    - cough
+    - cold
+    - rash
+    - pain
+    - aches
+    - chills
+    - sweat
+    - weakness
+    - tiredness
+    - fatigue
+    - sore throat
+    - runny nose
+    - diarrhea
+    - constipation
+    - back pain
+    - chest pain
+    - shortness of breath
+    - vomiting
+    - anxiety
+    - depression
+    - insomnia
+    - confusion
+    - swelling
+    - lump
+    - tingling
+    - numbness
+    - burning     
+

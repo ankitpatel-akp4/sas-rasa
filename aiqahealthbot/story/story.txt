@@ -6,3 +6,29 @@ u=> as soon as possible. as I told earlier I am having fiver sing morning.
 b=> sure, Dr Ram will will contact you at 2 pm. Meetin link. In case of emmergency you can call at +5844953 
 u=> thanks
 b=> welcome, please take care till our doctor contacts you.
+
+
+input => intent => action => response => input 
+
+book appointment 
+=> form in loop
+    name, age, time, date, symptoms, doctor
+    if all filds != null:
+        confirm: yes
+            book appointment
+        else: say thanks
+    else: ask name
+        ask age
+        ask time
+        ask date
+        etc..
+    inturpt: set a flag form intrupted, and form name
+
+handle intrupted
+    resolve the intrupt 
+    ask if resolved: go to form
+    else: wait for input. 
+
+every action must check if an form loop is active
+
+

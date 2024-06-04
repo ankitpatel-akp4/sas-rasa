@@ -1,148 +1,351 @@
 version: "3.1"
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-    - That works
-    - Sounds good
-    - Okay
-    - Sure
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-    - Not right now
-    - Maybe later
-- intent: thank
-  examples: |
-    - Thank you
-    - Thanks
-    - Appreciate it
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-- intent: book_appointment
-  examples: |
-    - I want to book an appointment
-    - Can I schedule an appointment?
-    - I'd like to make an appointment
-    - Book an appointment for me
-    - I need to see a doctor
-    - Schedule an appointment
-    - I'd like to see a doctor
-    - I want to make an appointment with a doctor
-    - Can I book an appointment for tomorrow?
-    - I need an appointment on [Monday](day_of_week)
-    - Is there an available slot for an appointment?
-    - I need to book an appointment with [Dr. Smith](doctor).
-    - Can I schedule an appointment with [Dr. Johnson](doctor)?
-    - I'd like to see [Dr. Green](doctor).
-    - I need an appointment with [Dr. Williams](doctor).
-    - Can I book an appointment with [Dr. Patel](doctor)?
-    - Is [Dr. Lee](doctor) available for an appointment?
-    - I need to book a follow-up with [Dr. Taylor](doctor).
-    - Can I schedule an appointment with a pediatrician for my child?
-    - I need to see [Dr. White](doctor).
-    - I need to book an appointment with [Dr. Kim](doctor).
-- intent: inform_time
-  examples: |
-    - How about [Friday](day)?
-    - Is there any availability [this weekend](time)?
-    - Can I get an appointment on [Wednesday](day)?
-    - I need an appointment [next Monday morning](time).
-    - Is [Friday afternoon](time) available?
-    - How about [Tuesday morning](time)?
-    - Do you have any openings [this week](time)?
-    - I would like to come in [Thursday afternoon](time).
-    - Is [tomorrow afternoon](time) available?
-    - How about [next Monday morning](time)?
-- intent: inform_time_specific
-  examples: |
-    - [10:00 AM](time)
-    - [2:00 PM](time)
-    - [3:00 PM](time)
-    - [9:30 AM](time)
-    - [11:00 AM](time)
-    - [1:00 PM](time)
-    - [2:30 PM](time)
-    - [10:30 AM](time)
-    - [11:30 AM](time)
-- intent: inquire_doctors
-  examples: |
-    - Can you tell me the available doctors?
-    - Who are the doctors I can book an appointment with?
-    - I'd like to know which doctors are available.
-    - Can you list all the available doctors?
-    - Who are the available doctors?
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+  
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+  
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - That works
+      - Sounds good
+      - Okay
+      - Sure
+  
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - Not right now
+      - Maybe later
+
+  - intent: thank
+    examples: |
+      - Thank you
+      - Thanks
+      - Appreciate it
+
+  - intent: ask_boot_mood
+    examples: |
+      - I am good what about you
+      - good, what about you
+      - what about you?
+      - how are you?
+      - how about you?
+      
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good      
+      - my day was horrible
+      - I am sad
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  - intent: book_appointment
+    examples: |
+      - I want to book an appointment
+      - Can I schedule an appointment?
+      - I'd like to make an appointment
+      - Book an appointment for me
+      - I need to see a doctor
+      - Schedule an appointment
+      - I'd like to see a doctor
+      - I want to make an appointment with a doctor
+      - Can I book an appointment for tomorrow?
+      - I need an appointment on [Monday](appointment_time)
+      - Is there an available slot for an appointment?
+      - I need to book an appointment with [Dr. Smith](appointment_doctor_name).
+      - Can I schedule an appointment with [Dr. Johnson](appointment_doctor_name)?
+      - I'd like to see [Dr. Green](appointment_doctor_name).
+      - I need an appointment with [Dr. Williams](appointment_doctor_name).
+      - Can I book an appointment with [Dr. Patel](appointment_doctor_name)?
+      - Is [Dr. Lee](appointment_doctor_name) available for an appointment?
+      - I need to book a follow-up with [Dr. Taylor](appointment_doctor_name).
+      - Can I schedule an appointment with a pediatrician for my child?
+      - I need to see [Dr. White](appointment_doctor_name).
+      - I need to book an appointment with [Dr. Kim](appointment_doctor_name).
+      - I have a [sore throat](appointment_symptom) and a [fever](appointment_symptom). I would like to book an appointment with [Dr. devpati](appointment_doctor_name) on [today afternoon](appointment_time).
+      - book an appointment for me with  [Joshi](appointment_doctor_name). I have [back pain](appointment_symptom). please book it [as soon as possible)(appointment_time)
+      - I would like to book an appointment with [Dr. Smith](appointment_doctor_name) on [Monday at 10:00 AM](appointment_time).
+      - Please schedule an appointment with [Dr. Brown](appointment_doctor_name) on [Tuesday in the morning](appointment_time).
+      - Book an appointment for me with [Dr. Johnson](appointment_doctor_name) for [Wednesdayafternoon](appointment_time).
+      - I need to see [Dr. Clark](appointment_doctor_name) on [Thursdayevening](appointment_time).
+      - Can I get an appointment with [Dr. Lewis](appointment_doctor_name) on [Fridaynight](appointment_time)?
+      - I want to book an appointment with [Dr. Martinez](appointment_doctor_name) on [Saturdaymorning](appointment_time).
+      - Schedule me for an appointment with [Dr. Robinson](appointment_doctor_name) on [Sundayafternoon](appointment_time).
+      - I have a [sore throat](appointment_symptom) and a [fever](appointment_symptom). I would like to book an appointment with [Dr. Devpati](appointment_doctor_name) on [todayafternoon](appointment_time).
+      - I need to see [Dr. Kumar](appointment_doctor_name) because I have a [severe headache](appointment_symptom). Can I get an appointment [tomorrowmorning](appointment_time)?
+      - Please schedule an appointment with [Dr. Patel](appointment_doctor_name). I am feeling very [dizzy](appointment_symptom). I need to see them [this evening](appointment_time).
+      - I want to book an appointment with [Dr. Rao](appointment_doctor_name) because I have [chest pain](appointment_symptom). I am available [next Mondayafternoon](appointment_time).
+      - My [stomach is hurting a lot](appointment_symptom). Can I book an appointment with [Dr. Sen](appointment_doctor_name) [tomorrow afternoon](appointment_time)?
+      - I am experiencing [shortness of breath](appointment_symptom). Please book an appointment with [Dr. Gupta](appointment_doctor_name) [right away](appointment_time).
+      - I have a [backpain](appointment_symptom) and a [fever](appointment_symptom). can you book an appointment as soon as possible
+      - I want to talk with doctor
+      - I need to consult with a doctor
+
+  - intent: inform_date_time
+    examples: |
+      - How about [Friday](appointment_time)?
+      - Is there any availability [this weekend](appointment_time)?
+      - Can I get an appointment on [Wednesday](appointment_time)?
+      - I need an appointment [next Monday morning](appointment_time).
+      - Is [Fridayafternoon](appointment_time) available?
+      - How about [Tuesday morning](appointment_time)?
+      - Do you have any openings [this week](appointment_time)?
+      - I would like to come in [Thursday afternoon](appointment_time).
+      - Is [tomorrow afternoon](appointment_time) available?
+      - How about [next Monday morning](appointment_time)?
+      - [6:30](appointment_time)
+      - [morning](appointment_time)
+      - [tommorow](appointment_time)
+      - [today 6:30](appointment_time)
+      - [tonight](appointment_time)
+
+  - intent: inform_symptom
+    examples: |
+      - I have a sore throat and a fever
+      - My symptoms include a headache and nausea
+      - I am experiencing chest pain and shortness of breath
+      - I feel dizzy and have a stomach ache
+      - My symptoms are a cough and a runny nose
+      - I have a high fever and body aches
+      - I'm feeling weak and have a sore throat
+      - I have a cold and a persistent cough
+      - fever
+      - I am not feeling well. I am having cold.
+      - I have a fever
+      - I am feeling feverish
+      - I have a high temperature
+      - My temperature is high
+      - I have chills
+      - I am experiencing chills
+      - I am shivering
+      - I am sweating a lot
+      - I am sweating more than usual
+      - I have been sweating a lot
+      - I feel weak
+      - I am feeling weak
+      - I feel very tired
+      - I am feeling more tired than usual
+      - I have a sore throat
+      - I am experiencing a sore throat
+      - I have a cough
+      - I have been coughing a lot
+      - I have a cold
+      - My nose is runny
+      - I have a runny nose
+      - My throat hurts
+      - My throat is sore
+      - I have body aches
+      - I have muscle aches
+      - My body hurts
+      - My muscles are aching
+      - I have a headache
+      - My head hurts
+      - I have a migraine
+      - I have been feeling dizzy
+      - I feel dizzy
+      - I have nausea
+      - I am feeling nauseous
+      - I have been vomiting
+      - I have been throwing up
+      - I have a rash
+      - I have a skin rash
+      - I have red spots on my skin
+      - My skin is itchy
+      - I have itchy skin
+      - I have a stomach ache
+      - My stomach hurts
+      - I have diarrhea
+      - I have been having diarrhea
+      - I have constipation
+      - I am constipated
+      - I have back pain
+      - My back hurts
+      - I have chest pain
+      - My chest hurts
+      - I have shortness of breath
+      - I am having trouble breathing
+      - I have been coughing up blood
+      - I have blood in my urine
+      - I have been losing weight
+      - I have lost a lot of weight
+      - I have gained a lot of weight
+      - I have high blood pressure
+      - My blood pressure is high
+      - I have low blood pressure
+      - My blood pressure is low
+      - I have high blood sugar
+      - My blood sugar is high
+      - I have low blood sugar
+      - My blood sugar is low
+      - I have been feeling anxious
+      - I am feeling anxious
+      - I have been feeling depressed
+      - I am feeling depressed
+      - I have insomnia
+      - I can't sleep
+      - I have been having trouble sleeping
+      - I have been feeling nauseated
+      - I have blurred vision
+      - My vision is blurry
+      - I have been feeling confused
+      - I have been feeling disoriented
+      - I have a lump
+      - I have a swelling
+      - I have a swollen chest
+      - My chest is swollen
+      - I have a burning sensation
+      - I have tingling
+      - I have numbness
+      - My hand is numb.
+      - My foot is numb.
+      - My leg is numb.
+      - My arm is numb.
+      - My fingers are numb.
+      - My toes are numb.
+      - My face is numb.
+      - My back is numb.
+      - My shoulder is numb.
+      - My neck is numb.
+      - fever
+      - headache
+      - nausea
+      - dizziness
+      - cough
+      - cold
+      - rash
+      - pain
+      - aches
+      - chills
+      - sweat
+      - weakness
+      - tiredness
+      - fatigue
+      - sore throat
+      - runny nose
+      - diarrhea
+      - constipation
+      - back pain
+      - chest pain
+      - shortness of breath
+      - vomiting
+      - anxiety
+      - depression
+      - insomnia
+      - confusion
+      - swelling
+      - lump
+      - tingling
+      - numbness
+      - burning     
+
+  - intent: inform_doctor
+    examples: |
+      - [Dr. Smith](appointment_doctor_name)
+      - [Brown](appointment_doctor_name)
+      - [Dr. John](appointment_doctor_name)
+      - [Dr. Williams](appointment_doctor_name)
+      - [Dr. Patel](appointment_doctor_name)
+      - [Dr. Lee](appointment_doctor_name)
+      - [Roberts](appointment_doctor_name)
+      - [Rohit](appointment_doctor_name)
+      - [Shyam](appointment_doctor_name)
+      - [Ankit](appointment_doctor_name)
+      - I want to see [Dr. Smith](appointment_doctor_name)
+      - Can I book an appointment with [Dr. Brown](appointment_doctor_name)?
+      - I need to consult with [John](appointment_doctor_name)
+      - I would like an appointment with [Dr. Williams](appointment_doctor_name)
+      - Please schedule an appointment with [Dr. Patel](appointment_doctor_name)
+      - I want an appointment with [Patel](appointment_doctor_name)
+      - Book me with [rohit](appointment_doctor_name)
+      - I would like to meet [Dr. Davis](appointment_doctor_name)
+      - Can I have an appointment with [Dr. Miller](appointment_doctor_name)?
+
+  - intent: button
+    examples: |
+      - [yes](conformation)
+      - [no](conformation)
+    
+

@@ -1,0 +1,52 @@
+version: "3.1"
+stories:
+- story: greet and ask help
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_help
+  - action: utter_ask_help
+
+- story: ask services
+  steps:
+  - intent: ask_services
+  - action: utter_show_services
+
+- story: select service
+  steps:
+  - intent: select_service
+  - action: utter_ask_symptoms
+
+- story: provide symptoms and ask details
+  steps:
+  - intent: provide_symptoms
+  - action: utter_ask_fever_details
+
+- story: recommend doctors
+  steps:
+  - intent: request_doctors
+  - action: utter_recommend_doctors
+  - intent: confirm
+  - action: utter_list_doctors
+
+- story: ask doctor info
+  steps:
+  - intent: ask_doctor_info
+  - action: utter_ask_date
+
+- story: book appointment
+  steps:
+  - intent: book_appointment
+  - action: utter_ask_date
+  - intent: provide_date
+  - action: utter_ask_time
+  - intent: provide_time
+  - action: utter_check_availability
+  - action: utter_confirm_appointment
+  - intent: confirm
+  - action: utter_appointment_confirmed
+
+- story: thank you
+  steps:
+  - intent: thank_you
+  - action: utter_thank_you

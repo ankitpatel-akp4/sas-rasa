@@ -66,37 +66,31 @@ class ActionGreet(Action):
             greeting = "Good afternoon"
         else:
             greeting = "Good evening"
-        dispatcher.utter_message(text=f"{greeting}! I am aiqa health bot. How are you?")
+        dispatcher.utter_message(text=f"{greeting}! I am aiqa bot. How are you?")
         # dispatcher.utter_message(text=f"{greeting}! I am aiqa bot. How can I assist you?")
         return [FollowupAction("action_listen")]    
 
 class ActionMoodGreat(BaseCustomAction):
 
     def name(self) -> str:
-        return "mood_great"
+        return "action_greet"
 
     def action(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
+
         dispatcher.utter_message(text=f"Perfect! How can I assist you today?")
-        return [FollowupAction("action_listen")]    
-    
-class ActionAskBootMood(BaseCustomAction):
-
-    def name(self) -> str:
-        return "action_ask_boot_mood"
-
-    def action(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
-        dispatcher.utter_message(text=f"I am good?")
-        dispatcher.utter_message(text=f"How can I assist you?")
         return [FollowupAction("action_listen")]    
 
 class ActionMoodUnhappy(BaseCustomAction):
 
     def name(self) -> str:
-        return "action_mood_unhappy"
+        return "action_greet"
 
     def action(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
 
         dispatcher.utter_message(text=f"Sorry to hear that!")
+        dispatcher.utter_message(text=f"I have a joke to cheer you up!")
+        dispatcher.utter_message(text=f"How do trees get online?")
+        dispatcher.utter_message(text=f"They just log on!")
         dispatcher.utter_message(text=f"How can I assist you today?")
         return [FollowupAction("action_listen")]    
 
@@ -228,17 +222,16 @@ class ActionInformSymptom(Action):
         appointment_symptom = tracker.get_slot("appointment_symptom")
         log.info("action_inform_symptom -> symptom_desc: {}"
                  .format(appointment_symptom))
-        current_active_form = tracker.get_slot("current_active_form")
-        if current_active_form == "action_book_appointment":
+        active_form = tracker.get_slot("active_form")
+        if active_form == "action_book_appointment":
             return [SlotSet("appointment_symptom", tracker.latest_message.get("text")), FollowupAction("action_book_appointment")]
         else:
             dispatcher.utter_message(text="Sorry to here that.")
-            dispatcher.utter_message(text="I can help you to get a consultancy with our doctor")
+            dispatcher.utter_message(text="I help you to get a consultancy with a doctoy")
             dispatcher.utter_message(text="would you like to book an appointment?")
             return [FollowupAction("action_listen"), SlotSet("confirm_question", "continue_with_appointment")] + [SlotSet("current_active_form", "action_book_appointment"), 
                                       SlotSet("active_forms", list(set(tracker.get_slot("active_forms"))
                                     .union(set(["action_book_appointment"]))) if tracker.get_slot("active_forms") else ["action_book_appointment"])]
-
 class ActionInformDoctor(Action):
     def name(self) -> str:
         return "action_inform_doctor"

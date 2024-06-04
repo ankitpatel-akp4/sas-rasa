@@ -1,0 +1,182 @@
+version: "3.1"
+
+nlu:
+  - intent: fun_time
+    examples: |
+      - tell me a joke
+      - joke
+      - make me laugh
+      - not feelink good make me laugh
+      - can you do somthing to make me laugh
+
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - exit
+      - let's stop
+      - lets stop
+      - i will go now
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - yes
+      - ok
+      - yeah, please
+      - sure
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - no, thank you
+      - not now
+      - maybe later
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  - intent: ask_help
+    examples: |
+      - I need help
+      - Can you help me?
+      - ask for help
+      - I need assistance
+
+  - intent: ask_services
+    examples: |
+      - Know more about services
+      - What services do you offer?
+      - Tell me about your services
+
+  - intent: select_service
+    examples: |
+      - Accidental Insurance
+      - Dental health
+      - Doctor consultation
+      - Hospital cash
+      - Nutritionist
+      - Skin care
+      - Fitness
+      - Ambulance
+      - Mental wellness
+
+  - intent: provide_symptoms
+    examples: |
+      - I am having a fever
+      - I have a cold
+      - I have a back pain
+      - I have a skin rash
+
+  - intent: request_doctors
+    examples: |
+      - Can you recommend a specialist?
+      - List some of your top doctors
+      - I need to see a doctor for my fever
+
+  - intent: ask_doctor_info
+    examples: |
+      - Can you tell me more about Dr. John Smith?
+      - Tell me about Dr. John Smith
+      - I want more information about Dr. John Smith
+
+  - intent: book_appointment
+    examples: |
+      - I would like to book an appointment
+      - Book an appointment with Dr. John Smith
+      - I want to see Dr. John Smith
+
+  - intent: provide_date
+    examples: |
+      - Tomorrow
+      - [June 5th](date)
+      - [Next Monday](date)
+      - [July 10th](date)
+
+  - intent: provide_time
+    examples: |
+      - 10 AM
+      - In the morning
+      - Afternoon
+      - Evening
+
+  - intent: thank_you
+    examples: |
+      - thank you
+      - thanks
+      - appreciate it
+      - thanks a lot
+
