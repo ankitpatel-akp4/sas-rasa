@@ -67,6 +67,7 @@ intents:
   - nlu_fallback
   - mood_great
   - mood_unhappy
+  - ask_boot_mood
   
 
 
@@ -83,26 +84,13 @@ actions:
   - action_inform_doctor
   - action_mood_great
   - action_mood_unhappy
+  - action_ask_boot_mood
 
 
 responses:
   utter_ask_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
-  utter_product:
-    - text: Are you looking product  ?
-      buttons:
-        - title: Yes 👍
-          payload: /yes
-        - title: No 👎
-          payload: /no
-           utter_product:
-  utter_product:
-    - text: Are you looking product  ?
-      buttons:
-        - title: Yes 👍
-          payload: /yes
-        - title: No 👎
-          payload: /no
+
 
 
 session_config:

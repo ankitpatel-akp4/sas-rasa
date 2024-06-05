@@ -28,6 +28,7 @@ nlu:
       - see you around
       - bye bye
       - see you later
+      - exit
   
   - intent: affirm
     examples: |
@@ -41,6 +42,7 @@ nlu:
       - Sounds good
       - Okay
       - Sure
+      - i am in
   
   - intent: deny
     examples: |
@@ -53,6 +55,7 @@ nlu:
       - not really
       - Not right now
       - Maybe later
+      - i am out
 
   - intent: thank
     examples: |
@@ -85,6 +88,8 @@ nlu:
       - so so perfect
       - so good
       - so perfect
+      - fantastic
+      - good
 
   - intent: mood_unhappy
     examples: |
@@ -342,10 +347,17 @@ nlu:
       - Book me with [rohit](appointment_doctor_name)
       - I would like to meet [Dr. Davis](appointment_doctor_name)
       - Can I have an appointment with [Dr. Miller](appointment_doctor_name)?
-
-  - intent: button
-    examples: |
-      - [yes](conformation)
-      - [no](conformation)
     
+
+  - intent: buy_policies_request 
+    examples: |
+      - need to by buy policies
+      - i would like to buy
+
+  - intent: list_policies
+    examples: |
+      - I want to see the insurance of aiqa health
+      - policies
+      - show me policies
+      - what kind of policies you shell
 

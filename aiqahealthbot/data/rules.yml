@@ -72,6 +72,10 @@ rules:
       - intent: mood_unhappy
       - action: action_mood_unhappy
       
+  - rule: handle thank
+    steps:
+      - intent: thank
+      - action: action_thank
 
 
 

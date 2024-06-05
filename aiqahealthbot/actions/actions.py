@@ -73,7 +73,7 @@ class ActionGreet(Action):
 class ActionMoodGreat(BaseCustomAction):
 
     def name(self) -> str:
-        return "mood_great"
+        return "action_mood_great"
 
     def action(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
         dispatcher.utter_message(text=f"Perfect! How can I assist you today?")
@@ -85,8 +85,8 @@ class ActionAskBootMood(BaseCustomAction):
         return "action_ask_boot_mood"
 
     def action(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
-        dispatcher.utter_message(text=f"I am good?")
-        dispatcher.utter_message(text=f"How can I assist you?")
+        dispatcher.utter_message(text=f"I am good.")
+        dispatcher.utter_message(text=f"How can I assist you today?")
         return [FollowupAction("action_listen")]    
 
 class ActionMoodUnhappy(BaseCustomAction):
@@ -108,9 +108,23 @@ class ActionGoodbye(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
         log.info(f"tracker: {str(tracker.sender_id)}")
 
-        dispatcher.utter_message(text=f"Bye, {tracker.sender_id}")
+        dispatcher.utter_message(text=f"Bye, Take care.")
 
         return [Restarted(), AllSlotsReset()] 
+
+class ActionActionThank(Action):
+
+    def name(self) -> str:
+        return "action_thank"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
+        log.info(f"tracker: {str(tracker.sender_id)}")
+
+        dispatcher.utter_message(text=f"You are welcome!")
+
+        return [Restarted(), AllSlotsReset()] 
+
+
 
 class ActionAffirm(Action):
     def name(self) -> str:
