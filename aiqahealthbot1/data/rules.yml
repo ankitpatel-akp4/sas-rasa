@@ -1,0 +1,83 @@
+version: "3.1"
+
+rules:
+
+  - rule: Implementation of the Two-Stage-Fallback
+    steps:
+      - or: 
+        - intent: out_of_scope
+        - intent: nlu_fallback
+      - action: action_default_fallback
+
+  - rule: handle greet
+    steps:
+      - intent: greet
+      - action: action_greet
+
+  - rule: handle goodbye
+    steps:
+      - intent: goodbye
+      - action: action_goodbye
+
+  # - rule: handle affirm
+  #   steps:
+  #     - intent: affirm
+  #     - action: action_affirm
+
+  # - rule: handle deny
+  #   steps:
+  #     - intent: deny
+  #     - action: action_deny
+
+  - rule: handle mood_great
+    steps:
+      - intent: mood_great
+      - action: action_mood_great
+
+  # - rule: handle ask_boot_mood
+  #   steps:
+  #     - intent: ask_boot_mood
+  #     - action: action_ask_boot_mood
+
+  - rule: handle mood_unhappy
+    steps:
+      - intent: mood_unhappy
+      - action: action_mood_unhappy
+
+  - rule: handle book_appointment
+    steps:
+      - intent: book_appointment
+      - action: action_book_appointment
+
+  # - rule: handle inform_date_time
+  #   steps:
+  #     - intent: inform_date_time
+  #     - action: action_inform_date_time
+
+  - rule: handle inform_symptom
+    steps:
+      - intent: inform_symptom
+      - action: action_inform_symptom
+
+  # - rule: handle inform_doctor
+  #   steps:
+  #     - intent: inform_doctor
+  #     - action: action_inform_doctor
+
+  # - rule: handle mood_great
+  #   steps:
+  #     - intent: mood_great
+  #     - action: action_mood_great
+      
+  # - rule: handle mood_unhappy
+  #   steps:
+  #     - intent: mood_unhappy
+  #     - action: action_mood_unhappy
+      
+  - rule: handle thank
+    steps:
+      - intent: thank
+      - action: action_thank
+
+
+

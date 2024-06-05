@@ -94,6 +94,10 @@ nlu:
       - i am feeling amazing
       - i am fineee
       - i m fine
+      - i m good
+      - i am good
+      - i m god
+      - i am god
 
   - intent: mood_unhappy
     examples: |
@@ -123,6 +127,65 @@ nlu:
       - extremly sad
       - so saad
       - so sad
+      - not well
+      - I'm feeling down
+      - I'm feeling blue
+      - Depressed
+      - In a bad mood
+      - Gloomy
+      - Feeling miserable
+      - I'm bummed out
+      - I feel low
+      - Feeling hopeless
+      - Really unhappy
+      - My heart feels heavy
+      - I'm heartbroken
+      - Feeling like crying
+      - My spirit is crushed
+      - Feeling dejected
+      - I'm feeling awful
+      - Feeling devastated
+      - Everything seems bleak
+      - I feel terrible
+      - I’m so disheartened
+      - Feeling glum
+      - My day was dreadful
+      - I'm feeling sorrowful
+      - Feeling melancholic
+      - I feel defeated
+      - I'm in despair
+      - Feeling downhearted
+      - I feel so bad
+      - My day was a disaster
+      - I'm feeling lousy
+      - Feeling discouraged
+      - I'm feeling wretched
+      - My mood is off
+      - Feeling woeful
+      - I'm feeling down in the dumps
+      - I feel crappy
+      - Feeling like I can't go on
+      - I'm feeling dreadful
+      - Feeling awful today
+      - I’m in low spirits
+      - My day was just the worst
+      - I feel so empty
+      - I'm really in a funk
+      - Feeling like everything is going wrong
+      - My day couldn't get any worse
+      - I'm so down
+      - Feeling very sorrowful
+      - I’m feeling bleak
+      - I'm in a bad place
+      - Feeling like I’m in a black hole
+      - I feel hopeless
+      - My day was upsetting
+      - I'm feeling dismal
+      - Feeling so lonely
+      - I'm feeling so downcast
+      - I'm really hurting
+      - I feel crushed
+      - Feeling like I’m carrying a heavy burden
 
   - intent: bot_challenge
     examples: |
