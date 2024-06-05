@@ -90,6 +90,10 @@ nlu:
       - so perfect
       - fantastic
       - good
+      - i am fine
+      - i am feeling amazing
+      - i am fineee
+      - i m fine
 
   - intent: mood_unhappy
     examples: |
