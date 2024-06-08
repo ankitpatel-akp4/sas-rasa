@@ -19,6 +19,11 @@ rules:
       - intent: goodbye
       - action: action_goodbye
 
+  - rule: handle challenge_bot
+    steps:
+      - intent: challenge_bot
+      - action: utter_challenge_bot
+
   # - rule: handle affirm
   #   steps:
   #     - intent: affirm

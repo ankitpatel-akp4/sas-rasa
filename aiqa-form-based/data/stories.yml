@@ -1,0 +1,84 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: book appointment
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_great
+    - action: utter_happy
+    - intent: manage_appointment
+    - slot_was_set:
+        - action: book
+    - slot_was_set:
+        - service: appointment
+    - action: action_book_appointment
+
+- story: view appointment
+  steps:
+    - intent: manage_appointment
+      entities:
+        - action: view
+        - service: appointment
+    - slot_was_set:
+        - action: view
+    - slot_was_set:
+        - service: appointment
+    - action: action_view_appointment
+
+- story: reschedule appointment
+  steps:
+    - intent: manage_appointment
+      entities:
+        - action: reschedule
+        - service: appointment
+    - slot_was_set:
+        - action: reschedule
+    - slot_was_set:
+        - service: appointment
+    - action: action_reschedule_appointment
+
+- story: cancel appointment
+  steps:
+    - intent: manage_appointment
+      entities:
+        - action: cancel
+        - service: appointment
+    - slot_was_set:
+        - action: cancel
+    - slot_was_set:
+        - service: appointment
+    - action: action_cancel_appointment
+
+
+
+
+

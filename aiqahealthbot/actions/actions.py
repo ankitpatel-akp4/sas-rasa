@@ -124,8 +124,6 @@ class ActionActionThank(Action):
 
         return [Restarted(), AllSlotsReset()] 
 
-
-
 class ActionAffirm(Action):
     def name(self) -> str:
         return "action_affirm"

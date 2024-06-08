@@ -102,13 +102,10 @@ nlu:
     examples: |
       - I'm not feeling well
       - My health is not good
-      - I feel sick
       - I'm feeling unwell
       - I think I'm getting sick
       - I'm not doing well health-wise
       - not well
-      - I feel dizzy
-      - I feel week
       - tired
       - helps
       - help
@@ -124,19 +121,6 @@ nlu:
 
   - intent: book_appointment
     examples: |
-      - paln
-      - plan
-      - pln
-      - service
-      - polices
-      - servicess
-      - services
-      - policy
-      - helth 
-      - helth policy
-      - consultation
-      - health plans
-      - doctor consultation
       - I want to book an appointment
       - Can I schedule an appointment?
       - I'd like to make an appointment
@@ -175,7 +159,228 @@ nlu:
       - I am experiencing [shortness of breath](appointment_symptom). Please book an appointment with [Dr. Gupta](appointment_doctor_name) [right away](appointment_time).
       - I have a [backpain](appointment_symptom) and a [fever](appointment_symptom). can you book an appointment as soon as possible
       - I want to talk with doctor
-      - I need to consult with a doctor
+      - I need to [consult with a doctor](services)
+      - i want to raise my claim
+      - How can I raise a claim for medical health insurance?
+      - How to raise a claim?
+      - Claim process for medical insurance
+      - How do I file a health insurance claim?
+      - Steps to file a medical insurance claim
+      - Claim health insurance
+      - Filing a claim for health insurance
+      - Medical insurance claim procedure
+      - What is the process for claiming medical insurance?
+      - How to claim medical insurance?
+      - How do I submit a health insurance claim?
+      - Procedure for health insurance claim
+      - How to get a reimbursement for medical insurance?
+      - Submit health insurance claim
+      - Claim medical insurance
+      - Health insurance claim steps
+      - How to make a health insurance claim?
+      - Health insurance claim
+      - Steps to raise a claim for health insurance
+      - Medical insurance claim
+      - How can I submit a claim for medical insurance?
+      - How do I raise a medical insurance claim?
+      - Process to claim medical insurance
+      - Claim health insurance online
+      - How to claim health insurance reimbursement?
+      - How to apply for a medical insurance claim?
+      - Claiming health insurance
+      - Health insurance claim form
+      - How can I apply for a health insurance claim?
+      - How to raise health insurance claim?
+      - How do I file a medical insurance claim?
+      - Raise a claim for medical insurance
+      - Steps to file a claim for health insurance
+      - How to submit a medical insurance claim?
+      - Procedure for claiming medical insurance
+      - Health insurance reimbursement process
+      - How to claim medical insurance online?
+      - File a claim for health insurance
+      - Process to file a health insurance claim
+      - Health insurance claim procedure
+      - Medical insurance reimbursement steps
+      - Submit a claim for health insurance
+      - How do I apply for a medical insurance claim?
+      - How can I file a health insurance claim?
+      - Steps to raise a medical insurance claim
+      - How to apply for health insurance reimbursement?
+      - How to get a health insurance claim?
+      - Health insurance claim process
+      - How to make a claim for health insurance?
+      - Process for medical insurance claim
+      - Filing a medical insurance claim
+      - Health insurance claim steps
+      - Medical insurance claim steps
+      - How do I claim my health insurance?
+      - How to file for a health insurance claim?
+      - What is the procedure for claiming health insurance?
+      - Steps to file a medical insurance claim
+      - Health insurance claim application
+      - How to get reimbursement from medical insurance?
+      - How to file a claim for medical insurance?
+      - Health insurance claim process steps
+      - How to submit health insurance claim form?
+      - Medical insurance claim form
+      - How do I raise a claim for medical insurance?
+      - Medical claim process
+      - What is the process to claim medical insurance?
+      - Apply for health insurance claim
+      - How to file a health insurance claim online?
+      - Medical insurance claim online
+      - Health insurance claim online
+      - Claim process for health insurance
+      - How do I get a medical insurance claim?
+      - Health insurance claim submission
+      - How to make a medical insurance claim?
+      - Health insurance claim procedure steps
+      - How to submit a claim for medical insurance?
+      - Process for claiming health insurance
+      - Claim medical insurance steps
+      - What are the steps to claim health insurance?
+      - How do I get health insurance claim?
+      - Raise a claim for health insurance
+      - How to file a medical insurance claim online?
+      - Medical insurance claim submission
+      - Health insurance claim online process
+      - Claim health insurance process
+      - What is the procedure to claim medical insurance?
+      - Submit medical insurance claim
+      - Steps to claim health insurance
+      - How to get health insurance reimbursement?
+      - Apply for medical insurance claim
+      - How to get a medical insurance reimbursement?
+      - File health insurance claim
+      - Health insurance claim steps online
+      - What are the steps to file a health insurance claim?
+      - Medical insurance claim application
+      - How to raise health insurance claim online?
+      - Health insurance claim filing process
+      - Steps to file medical insurance claim
+      - How do I get reimbursement for medical insurance?
+      - How can I raize a claim for medical health insurance?
+      - How to raize a claim?
+      - Claime process for medical insurance
+      - How do I file a health insurence claim?
+      - Steps to file a medical insurence claim
+      - Claime health insurance
+      - Filing a claime for health insurance
+      - Medical insurence claime procedure
+      - What is the process for claiming medical insurence?
+      - How to claime medical insurance?
+      - How do I submit a health insurence claim?
+      - Procedure for health insurence claim
+      - How to get a reimbursement for medical insurence?
+      - Submit health insurence claime
+      - Claime medical insurance
+      - Health insurence claim steps
+      - How to make a health insurence claim?
+      - Health insurence claime
+      - Steps to raize a claime for health insurence
+      - Medical insurence claime
+      - How can I submit a claime for medical insurence?
+      - How do I raize a medical insurence claim?
+      - Process to claime medical insurance
+      - Claime health insurence online
+      - How to claime health insurance reimbursement?
+      - How to apply for a medical insurence claime?
+      - Claiming health insurence
+      - Health insurence claime form
+      - How can I apply for a health insurence claime?
+      - How to raize health insurence claim?
+      - How do I file a medical insurence claim?
+      - Raize a claime for medical insurence
+      - Steps to file a claime for health insurence
+      - How to submit a medical insurence claime?
+      - Procedure for claiming medical insurence
+      - Health insurence reimbursement process
+      - How to claime medical insurence online?
+      - File a claime for health insurence
+      - Process to file a health insurence claim
+      - Health insurence claime procedure
+      - Medical insurence reimbursement steps
+      - Submit a claime for health insurence
+      - How do I apply for a medical insurence claime?
+      - How can I file a health insurence claime?
+      - Steps to raize a medical insurence claime
+      - How to apply for health insurence reimbursement?
+      - How to get a health insurence claime?
+      - Health insurence claime process
+      - How to make a claime for health insurence?
+      - Process for medical insurence claime
+      - Filing a medical insurence claime
+      - Health insurence claime steps
+      - Medical insurence claime steps
+      - How do I claime my health insurence?
+      - How to file for a health insurence claime?
+      - What is the procedure for claiming health insurence?
+      - Steps to file a medical insurence claime
+      - Health insurence claime application
+      - How to get reimbursement from medical insurence?
+      - How to file a claime for medical insurence?
+      - Health insurence claime process steps
+      - How to submit health insurence claime form?
+      - Medical insurence claime form
+      - How do I raize a claime for medical insurence?
+      - Medical claime process
+      - What is the process to claime medical insurence?
+      - Apply for health insurence claime
+      - How to file a health insurence claime online?
+      - Medical insurence claime online
+      - Health insurence claime online
+      - Claime process for health insurence
+      - How do I get a medical insurence claime?
+      - Health insurence claime submission
+      - How to make a medical insurence claime?
+      - Health insurence claime procedure steps
+      - How to submit a claime for medical insurence?
+      - Process for claiming health insurence
+      - Claime medical insurence steps
+      - What are the steps to claime health insurence?
+      - How do I get health insurence claime?
+      - Raize a claime for health insurence
+      - How to file a medical insurence claime online?
+      - Medical insurence claime submission
+      - Health insurence claime online process
+      - Claime health insurence process
+      - What is the procedure to claime medical insurence?
+      - Submit medical insurence claime
+      - Steps to claime health insurence
+      - How to get health insurence reimbursement?
+      - Apply for medical insurence claime
+      - How to get a medical insurence [reimbursement](services)?
+      - what you offer
+      - what you do
+      - (services)
+
+      
+
+  - lookup: services
+    examples: |
+      - paln
+      - plan
+      - pln
+      - service
+      - polices
+      - servicess
+      - services
+      - policy
+      - helth 
+      - helth policy
+      - consultation
+      - health plans
+      - doctor consultation    
+      - claim
+      - calime
+      - rezimbersment
+      - services
+      - service
+      - products
+      - product
+      - doctor
+      - docter
 
   # - intent: inform_date_time
   #   examples: |
@@ -197,7 +402,12 @@ nlu:
 
   - intent: inform_symptom
     examples: |
-      - ache   
+      - I feel [sick](symptom)
+      - I feel [dizzy](symptom)
+      - I feel [week](symptom)
+      - i feel [fever](symptom)
+      - i feel [chest pain](symptom)
+      - i feel [cough](symptom)
       - I have a [headache](symptom)
       - I feel [dizzy](symptom)
       - I'm experiencing [stomach pain](symptom)
@@ -294,6 +504,22 @@ nlu:
       - I have [mono](symptom)
       - I have [meningitis](symptom)
       - I have [encephalitis](symptom)
+      - [RSV](symptom)
+      - [encephalitis](symptom)
+      - [diabetes](symptom)
+      - [cancer](symptom)
+      - [influenza](symptom)
+      - [asthma](symptom)
+      - [dizzy](symptom)
+
+  - lookup: symptom
+    examples: |
+      - fiver
+      - diabetes
+      - hypertension
+      - asthma
+      - cancer
+      - influenza
       - ache
       - headache
       - dizzy
@@ -395,6 +621,7 @@ nlu:
   - intent: out_of_scope
     examples: |
       - dummy
+      - love
       
 
   # - intent: inform_doctor
@@ -431,6 +658,13 @@ nlu:
   #     - policies
   #     - show me policies
   #     - what kind of policies you shell
+
+  - intent: challenge_bot
+    examples: |
+      - whoyouare
+      - who you are
+      - r u a bot
+      - are you a human?
 
 
 

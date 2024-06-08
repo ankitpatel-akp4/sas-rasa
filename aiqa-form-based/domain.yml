@@ -1,0 +1,106 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - chitchat
+  - faq
+  - trigger_response_selector
+  - manage_appointment
+
+actions:
+  - action_chitchat_ask_weather
+  - action_chitchat_ask_name
+  - action_trigger_response_selector
+  - action_default_fallback
+  - action_book_appointment
+  - action_view_appointment
+  - action_reschedule_appointment
+  - action_cancel_appointment
+
+entities:
+  - action
+  - service
+  - patient_name
+  - patient_phone_number
+  - patient_age
+  - patient_symptom 
+
+slots:
+  action:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: action
+  service:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: service
+  patient_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: patient_name
+      - type: from_text
+  patient_phone_number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: patient_phone_number
+      - type: from_text
+  patient_age:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: patient_age
+      - type: from_text
+  patient_symptom:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: patient_symptom
+      - type: from_text
+
+forms:
+  book_appointment_form:
+    required_slots:
+      - patient_name
+      - patient_phone_number
+      - patient_age
+      - patient_symptom
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great!, how can I help you, today?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+
+  # utter_default:
+  # - text: I'm sorry, I can't help you.
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false

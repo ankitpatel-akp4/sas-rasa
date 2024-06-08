@@ -204,7 +204,7 @@ class ActionBookAppointment(Action):
         # return return_list + [SlotSet("current_active_form", self.name()), 
         #                       SlotSet("active_forms", list(set(tracker.get_slot("active_forms"))
         #                     .union(set([self.name()]))) if tracker.get_slot("active_forms") else [self.name()])]
-        dispatcher.utter_message(text=key_appointment)
+        dispatcher.utter_message(text="second_template")
         return return_list
         
         
