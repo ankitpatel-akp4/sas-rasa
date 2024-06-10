@@ -12,6 +12,8 @@ from abc import ABC, abstractmethod
 
 log = logging.getLogger(__name__)
 
+key_appointment = "initial_template"
+
 class BaseCustomAction(Action, ABC):
     
     @abstractmethod
@@ -29,7 +31,7 @@ class BaseCustomAction(Action, ABC):
         if current_active_form:
             if current_active_form == "action_book_appointment":
                 response_events.append(SlotSet("confirm_question","continue_with_appointment"))
-                dispatcher.utter_message(text="Would you like to continue with appointment booking?")
+                # dispatcher.utter_message(text="Would you like to continue with appointment booking?")
 
         return response_events
 
@@ -49,7 +51,7 @@ class ActionDefaultFallback(BaseCustomAction):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="I did not understand. Please rephrase or call at +918756523281 for human support.")
+        dispatcher.utter_message(text="Sorry, can you put more details regarding your inquery or call at +918756523281 for more support.")
         return []
 
 class ActionGreet(Action):
@@ -66,7 +68,11 @@ class ActionGreet(Action):
             greeting = "Good afternoon"
         else:
             greeting = "Good evening"
-        dispatcher.utter_message(text=f"{greeting}! I am aiqa health bot. How are you?")
+        
+        sender_id = tracker.sender_id
+        name = sender_id.split("_")[-1]
+        
+        dispatcher.utter_message(text=f"{greeting} {name}, how can I assist you today?")
         # dispatcher.utter_message(text=f"{greeting}! I am aiqa bot. How can I assist you?")
         return [FollowupAction("action_listen")]    
 
@@ -76,9 +82,31 @@ class ActionMoodGreat(BaseCustomAction):
         return "action_mood_great"
 
     def action(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
-        dispatcher.utter_message(text=f"Perfect! How can I assist you today?")
+        dispatcher.utter_message(text=f"We offer exceptional health services. Take a look for yourself.")
+        dispatcher.utter_message(text=key_appointment)
         return [FollowupAction("action_listen")]    
     
+class ActionRjBookConsultation(Action):
+
+    def name(self) -> str:
+        return "action_rj_book_consultation"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
+        # dispatcher.utter_message(text=f"We offer exceptional health services. Take a look for yourself.")
+        dispatcher.utter_message(text="consultation_template")
+        return [FollowupAction("action_listen")]    
+    
+class ActionRjBookClaim(Action):
+
+    def name(self) -> str:
+        return "action_rj_book_claim"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
+        # dispatcher.utter_message(text=f"We offer exceptional health services. Take a look for yourself.")
+        dispatcher.utter_message(text="claim_template")
+        return [FollowupAction("action_listen")]    
+    
+   
 class ActionAskBootMood(BaseCustomAction):
 
     def name(self) -> str:
@@ -96,8 +124,8 @@ class ActionMoodUnhappy(BaseCustomAction):
 
     def action(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
 
-        dispatcher.utter_message(text=f"Sorry to hear that!")
-        dispatcher.utter_message(text=f"How can I assist you today?")
+        dispatcher.utter_message(text=f"I'm sorry to hear that. What's the problem?")
+        # dispatcher.utter_message(text=f"")
         return [FollowupAction("action_listen")]    
 
 class ActionGoodbye(Action):
@@ -124,6 +152,8 @@ class ActionActionThank(Action):
 
         return [Restarted(), AllSlotsReset()] 
 
+
+
 class ActionAffirm(Action):
     def name(self) -> str:
         return "action_affirm"
@@ -137,7 +167,7 @@ class ActionAffirm(Action):
         elif confirm_question == "continue_with_appointment":
             return [FollowupAction("action_book_appointment")]
             
-        dispatcher.utter_message(text="I didn't understand. Please rephrase.")    
+        dispatcher.utter_message(text="Sorry, can you put more details regarding your inquery or call at +916262306306 for more support.")    
         return [FollowupAction("action_listen"), SlotSet("confirm_question", None)]
 
 class ActionDeny(Action):
@@ -152,10 +182,12 @@ class ActionDeny(Action):
         if confirm_question == "appointment_confirm":
             return [SlotSet("appointment_confirm", False), FollowupAction("action_book_appointment")]
         elif confirm_question == "continue_with_appointment":
-            dispatcher.utter_message(text="Ok. What else can I help you with?")
+            dispatcher.utter_message(text="We offer exceptional health services. Take a look for yourself!")
+            dispatcher.utter_message(text=key_appointment)
+            
             return response_events + [SlotSet("current_active_form", None)] + [FollowupAction("action_listen")]
             
-        dispatcher.utter_message(text="I didn't understand. Please rephrase.")    
+        dispatcher.utter_message(text="Sorry, can you put more details regarding your inquery or call at +918756523281 for more support.")    
         return response_events + [FollowupAction("action_listen")]
  
 class ActionBookAppointment(Action):
@@ -165,38 +197,41 @@ class ActionBookAppointment(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
         log.info(f"action_book_appointment")
         # self.extract_appointment_time(tracker)
-        required_slots = ["appointment_doctor_name", "appointment_symptom", "appointment_confirm"]
-        res_msg: Any = {}
+        # required_slots = ["appointment_doctor_name", "appointment_symptom", "appointment_confirm"]
+        # res_msg: Any = {}
         return_list: list = [FollowupAction("action_listen")]
-        for slot in required_slots:
-            log.info("action_book_appointment -> slot: {} => {}".format(slot, tracker.get_slot(slot)))
-            if tracker.get_slot(slot) is None:
-                if slot == "appointment_doctor_name":
-                    res_msg = "Which doctor would you like to book an appointment with?"
+        # for slot in required_slots:
+        #     log.info("action_book_appointment -> slot: {} => {}".format(slot, tracker.get_slot(slot)))
+        #     if tracker.get_slot(slot) is None:
+        #         # if slot == "appointment_doctor_name":
+        #             # res_msg = "Which doctor would you like to book an appointment with?"
                 
-                # elif slot == "appointment_time":
-                #     res_msg = "What time would you like to book the appointment?"
+        #         # elif slot == "appointment_time":
+        #         #     res_msg = "What time would you like to book the appointment?"
                 
-                # elif slot == "appointment_day":
-                #     res_msg = "On which day would you like to book the appointment?"
+        #         # elif slot == "appointment_day":
+        #         #     res_msg = "On which day would you like to book the appointment?"
                 
-                elif slot == "appointment_symptom":
-                    res_msg = "Please describe your symptoms."
+        #         if slot == "appointment_symptom":
+        #             res_msg = "Please describe your symptoms."
                     
-                elif slot == "appointment_confirm":
-                    res_msg = "Please confirm your appointment."
-                    dispatcher.utter_message(text=res_msg)
-                    res_msg =  "doctor: {}\day: {}\ntime: {}\nsymptoms: {}\n".format(
-                                    tracker.get_slot("appointment_doctor_name"),
-                                    tracker.get_slot("appointment_day"),
-                                    tracker.get_slot("appointment_time"),
-                                    tracker.get_slot("appointment_symptom")                    
-                                )
-                    return_list += [SlotSet("confirm_question", "appointment_confirm")]
-                dispatcher.utter_message(text=res_msg)
-                return return_list + [SlotSet("current_active_form", self.name()), 
-                                      SlotSet("active_forms", list(set(tracker.get_slot("active_forms"))
-                                    .union(set([self.name()]))) if tracker.get_slot("active_forms") else [self.name()])]
+        #         elif slot == "appointment_confirm":
+        #             res_msg = "Please confirm your appointment."
+        #             dispatcher.utter_message(text=res_msg)
+        #             res_msg =  "doctor: {}\day: {}\ntime: {}\nsymptoms: {}\n".format(
+        #                             tracker.get_slot("appointment_doctor_name"),
+        #                             tracker.get_slot("appointment_day"),
+        #                             tracker.get_slot("appointment_time"),
+        #                             tracker.get_slot("appointment_symptom")                    
+        #                         )
+        #             return_list += [SlotSet("confirm_question", "appointment_confirm")]
+        #         dispatcher.utter_message(text=res_msg)
+        # return return_list + [SlotSet("current_active_form", self.name()), 
+        #                       SlotSet("active_forms", list(set(tracker.get_slot("active_forms"))
+        #                     .union(set([self.name()]))) if tracker.get_slot("active_forms") else [self.name()])]
+        dispatcher.utter_message(text=key_appointment)
+        return return_list
+        
         
         if tracker.get_slot("appointment_confirm"):
             dispatcher.utter_message(text="Your appointment has been booked!")
@@ -241,15 +276,15 @@ class ActionInformSymptom(Action):
         log.info("action_inform_symptom -> symptom_desc: {}"
                  .format(appointment_symptom))
         current_active_form = tracker.get_slot("current_active_form")
-        if current_active_form == "action_book_appointment":
-            return [SlotSet("appointment_symptom", tracker.latest_message.get("text")), FollowupAction("action_book_appointment")]
-        else:
-            dispatcher.utter_message(text="Sorry to here that.")
-            dispatcher.utter_message(text="I can help you to get a consultancy with our doctor")
-            dispatcher.utter_message(text="would you like to book an appointment?")
-            return [FollowupAction("action_listen"), SlotSet("confirm_question", "continue_with_appointment")] + [SlotSet("current_active_form", "action_book_appointment"), 
-                                      SlotSet("active_forms", list(set(tracker.get_slot("active_forms"))
-                                    .union(set(["action_book_appointment"]))) if tracker.get_slot("active_forms") else ["action_book_appointment"])]
+        # if current_active_form == "action_book_appointment":
+        #     return [SlotSet("appointment_symptom", tracker.latest_message.get("text")), FollowupAction("action_book_appointment")]
+        # else:
+        #dispatcher.utter_message(text="I'm sorry to hear that.")
+        dispatcher.utter_message(text="We offer health services and can provide assistance if needed.")
+        dispatcher.utter_message(text=key_appointment)
+        return [FollowupAction("action_listen"), SlotSet("confirm_question", "continue_with_appointment")] + [SlotSet("current_active_form", "action_book_appointment"), 
+                                    SlotSet("active_forms", list(set(tracker.get_slot("active_forms"))
+                                .union(set(["action_book_appointment"]))) if tracker.get_slot("active_forms") else ["action_book_appointment"])]
 
 class ActionInformDoctor(Action):
     def name(self) -> str:

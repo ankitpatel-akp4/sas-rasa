@@ -30,32 +30,32 @@ nlu:
       - see you later
       - exit
   
-  - intent: affirm
-    examples: |
-      - yes
-      - y
-      - indeed
-      - of course
-      - that sounds good
-      - correct
-      - That works
-      - Sounds good
-      - Okay
-      - Sure
-      - i am in
+  # - intent: affirm
+  #   examples: |
+  #     - yes
+  #     - y
+  #     - indeed
+  #     - of course
+  #     - that sounds good
+  #     - correct
+  #     - That works
+  #     - Sounds good
+  #     - Okay
+  #     - Sure
+  #     - i am in
   
-  - intent: deny
-    examples: |
-      - no
-      - n
-      - never
-      - I don't think so
-      - don't like that
-      - no way
-      - not really
-      - Not right now
-      - Maybe later
-      - i am out
+  # - intent: deny
+  #   examples: |
+  #     - no
+  #     - n
+  #     - never
+  #     - I don't think so
+  #     - don't like that
+  #     - no way
+  #     - not really
+  #     - Not right now
+  #     - Maybe later
+  #     - i am out
 
   - intent: thank
     examples: |
@@ -63,13 +63,13 @@ nlu:
       - Thanks
       - Appreciate it
 
-  - intent: ask_boot_mood
-    examples: |
-      - I am good what about you
-      - good, what about you
-      - what about you?
-      - how are you?
-      - how about you?
+  # - intent: ask_boot_mood
+  #   examples: |
+  #     - I am good what about you
+  #     - good, what about you
+  #     - what about you?
+  #     - how are you?
+  #     - how about you?
       
 
   - intent: mood_great
@@ -94,107 +94,35 @@ nlu:
       - i am feeling amazing
       - i am fineee
       - i m fine
-      - i m good
-      - i am good
-      - i m god
-      - i am god
+      - feeling well
+      - everything ok
+      - i am well
+      - i m well
+      - I am wel
+
 
   - intent: mood_unhappy
     examples: |
-      - my day was horrible
-      - I am sad
-      - I am disappointed
-      - super sad
-      - I'm so sad
-      - sad
-      - very sad
-      - unhappy
-      - not good
-      - not very good      
-      - my day was horrible
-      - I am sad
-      - I am disappointed
-      - super sad
-      - I'm so sad
-      - sad
-      - very sad
-      - unhappy
-      - not good
-      - not very good
-      - extremly sad
-      - so saad
-      - so sad
-      - extremly sad
-      - so saad
-      - so sad
+      - I'm not feeling well
+      - My health is not good
+      - I'm feeling unwell
+      - I think I'm getting sick
+      - I'm not doing well health-wise
       - not well
-      - I'm feeling down
-      - I'm feeling blue
-      - Depressed
-      - In a bad mood
-      - Gloomy
-      - Feeling miserable
-      - I'm bummed out
-      - I feel low
-      - Feeling hopeless
-      - Really unhappy
-      - My heart feels heavy
-      - I'm heartbroken
-      - Feeling like crying
-      - My spirit is crushed
-      - Feeling dejected
-      - I'm feeling awful
-      - Feeling devastated
-      - Everything seems bleak
-      - I feel terrible
-      - I’m so disheartened
-      - Feeling glum
-      - My day was dreadful
-      - I'm feeling sorrowful
-      - Feeling melancholic
-      - I feel defeated
-      - I'm in despair
-      - Feeling downhearted
-      - I feel so bad
-      - My day was a disaster
-      - I'm feeling lousy
-      - Feeling discouraged
-      - I'm feeling wretched
-      - My mood is off
-      - Feeling woeful
-      - I'm feeling down in the dumps
-      - I feel crappy
-      - Feeling like I can't go on
-      - I'm feeling dreadful
-      - Feeling awful today
-      - I’m in low spirits
-      - My day was just the worst
-      - I feel so empty
-      - I'm really in a funk
-      - Feeling like everything is going wrong
-      - My day couldn't get any worse
-      - I'm so down
-      - Feeling very sorrowful
-      - I’m feeling bleak
-      - I'm in a bad place
-      - Feeling like I’m in a black hole
-      - I feel hopeless
-      - My day was upsetting
-      - I'm feeling dismal
-      - Feeling so lonely
-      - I'm feeling so downcast
-      - I'm really hurting
-      - I feel crushed
-      - Feeling like I’m carrying a heavy burden
+      - tired
+      - helps
+      - help
 
-  - intent: bot_challenge
-    examples: |
-      - are you a bot?
-      - are you a human?
-      - am I talking to a bot?
-      - am I talking to a human?
+  # - intent: bot_challenge
+  #   examples: |
+  #     - plan
+  #     - buy plan
+  #     - are you a bot?
+  #     - are you a human?
+  #     - am I talking to a bot?
+  #     - am I talking to a human?
 
-  - intent: book_appointment
+  - intent: rj_book_consultation
     examples: |
       - I want to book an appointment
       - Can I schedule an appointment?
@@ -234,197 +162,517 @@ nlu:
       - I am experiencing [shortness of breath](appointment_symptom). Please book an appointment with [Dr. Gupta](appointment_doctor_name) [right away](appointment_time).
       - I have a [backpain](appointment_symptom) and a [fever](appointment_symptom). can you book an appointment as soon as possible
       - I want to talk with doctor
-      - I need to consult with a doctor
-
-  - intent: inform_date_time
+      - I need to [consult with a doctor](services)
+      - doctor consultation  
+      - doctor  
+      - consultation
+      
+  - intent: rj_book_claim
     examples: |
-      - How about [Friday](appointment_time)?
-      - Is there any availability [this weekend](appointment_time)?
-      - Can I get an appointment on [Wednesday](appointment_time)?
-      - I need an appointment [next Monday morning](appointment_time).
-      - Is [Fridayafternoon](appointment_time) available?
-      - How about [Tuesday morning](appointment_time)?
-      - Do you have any openings [this week](appointment_time)?
-      - I would like to come in [Thursday afternoon](appointment_time).
-      - Is [tomorrow afternoon](appointment_time) available?
-      - How about [next Monday morning](appointment_time)?
-      - [6:30](appointment_time)
-      - [morning](appointment_time)
-      - [tommorow](appointment_time)
-      - [today 6:30](appointment_time)
-      - [tonight](appointment_time)
+      - i want to raise my claim
+      - How can I raise a claim for medical health insurance?
+      - How to raise a claim?
+      - Claim process for medical insurance
+      - How do I file a health insurance claim?
+      - Steps to file a medical insurance claim
+      - Claim health insurance
+      - Filing a claim for health insurance
+      - Medical insurance claim procedure
+      - What is the process for claiming medical insurance?
+      - How to claim medical insurance?
+      - How do I submit a health insurance claim?
+      - Procedure for health insurance claim
+      - How to get a reimbursement for medical insurance?
+      - Submit health insurance claim
+      - Claim medical insurance
+      - Health insurance claim steps
+      - How to make a health insurance claim?
+      - Health insurance claim
+      - Steps to raise a claim for health insurance
+      - Medical insurance claim
+      - How can I submit a claim for medical insurance?
+      - How do I raise a medical insurance claim?
+      - Process to claim medical insurance
+      - Claim health insurance online
+      - How to claim health insurance reimbursement?
+      - How to apply for a medical insurance claim?
+      - Claiming health insurance
+      - Health insurance claim form
+      - How can I apply for a health insurance claim?
+      - How to raise health insurance claim?
+      - How do I file a medical insurance claim?
+      - Raise a claim for medical insurance
+      - Steps to file a claim for health insurance
+      - How to submit a medical insurance claim?
+      - Procedure for claiming medical insurance
+      - Health insurance reimbursement process
+      - How to claim medical insurance online?
+      - File a claim for health insurance
+      - Process to file a health insurance claim
+      - Health insurance claim procedure
+      - Medical insurance reimbursement steps
+      - Submit a claim for health insurance
+      - How do I apply for a medical insurance claim?
+      - How can I file a health insurance claim?
+      - Steps to raise a medical insurance claim
+      - How to apply for health insurance reimbursement?
+      - How to get a health insurance claim?
+      - Health insurance claim process
+      - How to make a claim for health insurance?
+      - Process for medical insurance claim
+      - Filing a medical insurance claim
+      - Health insurance claim steps
+      - Medical insurance claim steps
+      - How do I claim my health insurance?
+      - How to file for a health insurance claim?
+      - What is the procedure for claiming health insurance?
+      - Steps to file a medical insurance claim
+      - Health insurance claim application
+      - How to get reimbursement from medical insurance?
+      - How to file a claim for medical insurance?
+      - Health insurance claim process steps
+      - How to submit health insurance claim form?
+      - Medical insurance claim form
+      - How do I raise a claim for medical insurance?
+      - Medical claim process
+      - What is the process to claim medical insurance?
+      - Apply for health insurance claim
+      - How to file a health insurance claim online?
+      - Medical insurance claim online
+      - Health insurance claim online
+      - Claim process for health insurance
+      - How do I get a medical insurance claim?
+      - Health insurance claim submission
+      - How to make a medical insurance claim?
+      - Health insurance claim procedure steps
+      - How to submit a claim for medical insurance?
+      - Process for claiming health insurance
+      - Claim medical insurance steps
+      - What are the steps to claim health insurance?
+      - How do I get health insurance claim?
+      - Raise a claim for health insurance
+      - How to file a medical insurance claim online?
+      - Medical insurance claim submission
+      - Health insurance claim online process
+      - Claim health insurance process
+      - What is the procedure to claim medical insurance?
+      - Submit medical insurance claim
+      - Steps to claim health insurance
+      - How to get health insurance reimbursement?
+      - Apply for medical insurance claim
+      - How to get a medical insurance reimbursement?
+      - File health insurance claim
+      - Health insurance claim steps online
+      - What are the steps to file a health insurance claim?
+      - Medical insurance claim application
+      - How to raise health insurance claim online?
+      - Health insurance claim filing process
+      - Steps to file medical insurance claim
+      - How do I get reimbursement for medical insurance?
+      - How can I raize a claim for medical health insurance?
+      - How to raize a claim?
+      - Claime process for medical insurance
+      - How do I file a health insurence claim?
+      - Steps to file a medical insurence claim
+      - Claime health insurance
+      - Filing a claime for health insurance
+      - Medical insurence claime procedure
+      - What is the process for claiming medical insurence?
+      - How to claime medical insurance?
+      - How do I submit a health insurence claim?
+      - Procedure for health insurence claim
+      - How to get a reimbursement for medical insurence?
+      - Submit health insurence claime
+      - Claime medical insurance
+      - Health insurence claim steps
+      - How to make a health insurence claim?
+      - Health insurence claime
+      - Steps to raize a claime for health insurence
+      - Medical insurence claime
+      - How can I submit a claime for medical insurence?
+      - How do I raize a medical insurence claim?
+      - Process to claime medical insurance
+      - Claime health insurence online
+      - How to claime health insurance reimbursement?
+      - How to apply for a medical insurence claime?
+      - Claiming health insurence
+      - Health insurence claime form
+      - How can I apply for a health insurence claime?
+      - How to raize health insurence claim?
+      - How do I file a medical insurence claim?
+      - Raize a claime for medical insurence
+      - Steps to file a claime for health insurence
+      - How to submit a medical insurence claime?
+      - Procedure for claiming medical insurence
+      - Health insurence reimbursement process
+      - How to claime medical insurence online?
+      - File a claime for health insurence
+      - Process to file a health insurence claim
+      - Health insurence claime procedure
+      - Medical insurence reimbursement steps
+      - Submit a claime for health insurence
+      - How do I apply for a medical insurence claime?
+      - How can I file a health insurence claime?
+      - Steps to raize a medical insurence claime
+      - How to apply for health insurence reimbursement?
+      - How to get a health insurence claime?
+      - Health insurence claime process
+      - How to make a claime for health insurence?
+      - Process for medical insurence claime
+      - Filing a medical insurence claime
+      - Health insurence claime steps
+      - Medical insurence claime steps
+      - How do I claime my health insurence?
+      - How to file for a health insurence claime?
+      - What is the procedure for claiming health insurence?
+      - Steps to file a medical insurence claime
+      - Health insurence claime application
+      - How to get reimbursement from medical insurence?
+      - How to file a claime for medical insurence?
+      - Health insurence claime process steps
+      - How to submit health insurence claime form?
+      - Medical insurence claime form
+      - How do I raize a claime for medical insurence?
+      - Medical claime process
+      - What is the process to claime medical insurence?
+      - Apply for health insurence claime
+      - How to file a health insurence claime online?
+      - Medical insurence claime online
+      - Health insurence claime online
+      - Claime process for health insurence
+      - How do I get a medical insurence claime?
+      - Health insurence claime submission
+      - How to make a medical insurence claime?
+      - Health insurence claime procedure steps
+      - How to submit a claime for medical insurence?
+      - Process for claiming health insurence
+      - Claime medical insurence steps
+      - What are the steps to claime health insurence?
+      - How do I get health insurence claime?
+      - Raize a claime for health insurence
+      - How to file a medical insurence claime online?
+      - Medical insurence claime submission
+      - Health insurence claime online process
+      - Claime health insurence process
+      - What is the procedure to claime medical insurence?
+      - Submit medical insurence claime
+      - Steps to claime health insurence
+      - How to get health insurence reimbursement?
+      - Apply for medical insurence claime
+      - claim
+      - calime
+      - rezimbersment
+
+  - intent: book_appointment
+    examples: |
+      - How to get a medical insurence [reimbursement](services)?
+      - what you offer
+      - what you do
+      - loan
+      - buy loan
+      - buy policy
+      - book policy
+      - book
+      - order
+      - place order
+      - paln
+      - plan
+      - pln
+      - service
+      - polices
+      - servicess
+      - services
+      - policy
+      - helth 
+      - helth policy
+      - health plans
+      - services
+      - service
+      - products
+      - product
+      - docter
+
+  # - intent: inform_date_time
+  #   examples: |
+  #     - How about [Friday](appointment_time)?
+  #     - Is there any availability [this weekend](appointment_time)?
+  #     - Can I get an appointment on [Wednesday](appointment_time)?
+  #     - I need an appointment [next Monday morning](appointment_time).
+  #     - Is [Fridayafternoon](appointment_time) available?
+  #     - How about [Tuesday morning](appointment_time)?
+  #     - Do you have any openings [this week](appointment_time)?
+  #     - I would like to come in [Thursday afternoon](appointment_time).
+  #     - Is [tomorrow afternoon](appointment_time) available?
+  #     - How about [next Monday morning](appointment_time)?
+  #     - [6:30](appointment_time)
+  #     - [morning](appointment_time)
+  #     - [tommorow](appointment_time)
+  #     - [today 6:30](appointment_time)
+  #     - [tonight](appointment_time)
 
   - intent: inform_symptom
     examples: |
-      - I have a sore throat and a fever
-      - My symptoms include a headache and nausea
-      - I am experiencing chest pain and shortness of breath
-      - I feel dizzy and have a stomach ache
-      - My symptoms are a cough and a runny nose
-      - I have a high fever and body aches
-      - I'm feeling weak and have a sore throat
-      - I have a cold and a persistent cough
-      - fever
-      - I am not feeling well. I am having cold.
-      - I have a fever
-      - I am feeling feverish
-      - I have a high temperature
-      - My temperature is high
-      - I have chills
-      - I am experiencing chills
-      - I am shivering
-      - I am sweating a lot
-      - I am sweating more than usual
-      - I have been sweating a lot
-      - I feel weak
-      - I am feeling weak
-      - I feel very tired
-      - I am feeling more tired than usual
-      - I have a sore throat
-      - I am experiencing a sore throat
-      - I have a cough
-      - I have been coughing a lot
-      - I have a cold
-      - My nose is runny
-      - I have a runny nose
-      - My throat hurts
-      - My throat is sore
-      - I have body aches
-      - I have muscle aches
-      - My body hurts
-      - My muscles are aching
-      - I have a headache
-      - My head hurts
-      - I have a migraine
-      - I have been feeling dizzy
-      - I feel dizzy
-      - I have nausea
-      - I am feeling nauseous
-      - I have been vomiting
-      - I have been throwing up
-      - I have a rash
-      - I have a skin rash
-      - I have red spots on my skin
-      - My skin is itchy
-      - I have itchy skin
-      - I have a stomach ache
-      - My stomach hurts
-      - I have diarrhea
-      - I have been having diarrhea
-      - I have constipation
-      - I am constipated
-      - I have back pain
-      - My back hurts
-      - I have chest pain
-      - My chest hurts
-      - I have shortness of breath
-      - I am having trouble breathing
-      - I have been coughing up blood
-      - I have blood in my urine
-      - I have been losing weight
-      - I have lost a lot of weight
-      - I have gained a lot of weight
-      - I have high blood pressure
-      - My blood pressure is high
-      - I have low blood pressure
-      - My blood pressure is low
-      - I have high blood sugar
-      - My blood sugar is high
-      - I have low blood sugar
-      - My blood sugar is low
-      - I have been feeling anxious
-      - I am feeling anxious
-      - I have been feeling depressed
-      - I am feeling depressed
-      - I have insomnia
-      - I can't sleep
-      - I have been having trouble sleeping
-      - I have been feeling nauseated
-      - I have blurred vision
-      - My vision is blurry
-      - I have been feeling confused
-      - I have been feeling disoriented
-      - I have a lump
-      - I have a swelling
-      - I have a swollen chest
-      - My chest is swollen
-      - I have a burning sensation
-      - I have tingling
-      - I have numbness
-      - My hand is numb.
-      - My foot is numb.
-      - My leg is numb.
-      - My arm is numb.
-      - My fingers are numb.
-      - My toes are numb.
-      - My face is numb.
-      - My back is numb.
-      - My shoulder is numb.
-      - My neck is numb.
-      - fever
+      - I feel [sick](symptom)
+      - I feel [dizzy](symptom)
+      - I feel [week](symptom)
+      - i feel [fever](symptom)
+      - i feel [chest pain](symptom)
+      - i feel [cough](symptom)
+      - I have a [headache](symptom)
+      - I feel [dizzy](symptom)
+      - I'm experiencing [stomach pain](symptom)
+      - I have a [sore throat](symptom)
+      - I'm feeling [nauseous](symptom)
+      - I have a [fever](symptom)
+      - I have a [cough](symptom)
+      - I have [chest pain](symptom)
+      - I'm having [trouble breathing](symptom)
+      - I have [muscle pain](symptom)
+      - I have [joint pain](symptom)
+      - I have a [rash](symptom)
+      - I have [itchy skin](symptom)
+      - I have [fatigue](symptom)
+      - I have [diarrhea](symptom)
+      - I have [constipation](symptom)
+      - I have a [runny nose](symptom)
+      - I have [sinus pain](symptom)
+      - I have [ear pain](symptom)
+      - I have [eye pain](symptom)
+      - I have [tooth pain](symptom)
+      - I have [back pain](symptom)
+      - I have [neck pain](symptom)
+      - I have [high blood pressure](symptom)
+      - I have [low blood pressure](symptom)
+      - I have [high blood sugar](symptom)
+      - I have [low blood sugar](symptom)
+      - I have [acid reflux](symptom)
+      - I have [heartburn](symptom)
+      - I have [migraines](symptom)
+      - I have [anxiety](symptom)
+      - I have [depression](symptom)
+      - I have [insomnia](symptom)
+      - I have [allergies](symptom)
+      - I have [asthma](symptom)
+      - I have [bronchitis](symptom)
+      - I have [pneumonia](symptom)
+      - I have [flu](symptom)
+      - I think I have [COVID-19](symptom)
+      - I have [strep throat](symptom)
+      - I have [urinary tract infection](symptom)
+      - I have [yeast infection](symptom)
+      - I have [eczema](symptom)
+      - I have [psoriasis](symptom)
+      - I have [arthritis](symptom)
+      - I have [osteoporosis](symptom)
+      - I have [anemia](symptom)
+      - I have [thyroid issues](symptom)
+      - I have [liver disease](symptom)
+      - I have [kidney disease](symptom)
+      - I have [heart disease](symptom)
+      - I have [diabetes](symptom)
+      - I have [cancer](symptom)
+      - I have [appendicitis](symptom)
+      - I have [gallstones](symptom)
+      - I have [diverticulitis](symptom)
+      - I have [irritable bowel syndrome](symptom)
+      - I have [Crohn's disease](symptom)
+      - I have [ulcerative colitis](symptom)
+      - I have [celiac disease](symptom)
+      - I have [hepatitis](symptom)
+      - I have [pancreatitis](symptom)
+      - I have [fibromyalgia](symptom)
+      - I have [chronic fatigue syndrome](symptom)
+      - I have [lyme disease](symptom)
+      - I have [multiple sclerosis](symptom)
+      - I have [Parkinson's disease](symptom)
+      - I have [Alzheimer's disease](symptom)
+      - I have [dementia](symptom)
+      - I have [epilepsy](symptom)
+      - I have [bipolar disorder](symptom)
+      - I have [schizophrenia](symptom)
+      - I have [autism](symptom)
+      - I have [ADHD](symptom)
+      - I have [PTSD](symptom)
+      - I have [eating disorder](symptom)
+      - I have [obesity](symptom)
+      - I have [HIV/AIDS](symptom)
+      - I have [STI](symptom)
+      - I have [tuberculosis](symptom)
+      - I have [malaria](symptom)
+      - I have [dengue](symptom)
+      - I have [chikungunya](symptom)
+      - I have [zika virus](symptom)
+      - I have [measles](symptom)
+      - I have [mumps](symptom)
+      - I have [rubella](symptom)
+      - I have [chickenpox](symptom)
+      - I have [shingles](symptom)
+      - I have [whooping cough](symptom)
+      - I have [scarlet fever](symptom)
+      - I have [hand, foot, and mouth disease](symptom)
+      - I have [RSV](symptom)
+      - I have [mono](symptom)
+      - I have [meningitis](symptom)
+      - I have [encephalitis](symptom)
+      - [RSV](symptom)
+      - [encephalitis](symptom)
+      - [diabetes](symptom)
+      - [cancer](symptom)
+      - [influenza](symptom)
+      - [asthma](symptom)
+      - [dizzy](symptom)
+      - fiver
+      - diabetes
+      - hypertension
+      - asthma
+      - cancer
+      - influenza
+      - ache
       - headache
-      - nausea
-      - dizziness
-      - cough
-      - cold
-      - rash
-      - pain
-      - aches
-      - chills
-      - sweat
-      - weakness
-      - tiredness
-      - fatigue
+      - dizzy
+      - stomach pain
       - sore throat
-      - runny nose
+      - nauseous
+      - fever
+      - cough
+      - chest pain
+      - trouble breathing
+      - muscle pain
+      - joint pain
+      - rash
+      - itchy skin
+      - fatigue
       - diarrhea
       - constipation
+      - runny nose
+      - sinus pain
+      - ear pain
+      - eye pain
+      - tooth pain
       - back pain
-      - chest pain
-      - shortness of breath
-      - vomiting
+      - neck pain
+      - high blood pressure
+      - low blood pressure
+      - high blood sugar
+      - low blood sugar
+      - acid reflux
+      - heartburn
+      - migraines
       - anxiety
       - depression
       - insomnia
-      - confusion
-      - swelling
-      - lump
-      - tingling
-      - numbness
-      - burning     
+      - allergies
+      - asthma
+      - bronchitis
+      - pneumonia
+      - flu
+      - COVID-19
+      - strep throat
+      - urinary tract infection
+      - yeast infection
+      - eczema
+      - psoriasis
+      - arthritis
+      - osteoporosis
+      - anemia
+      - thyroid issues
+      - liver disease
+      - kidney disease
+      - heart disease
+      - diabetes
+      - cancer
+      - appendicitis
+      - gallstones
+      - diverticulitis
+      - irritable bowel syndrome
+      - Crohn's disease
+      - ulcerative colitis
+      - celiac disease
+      - hepatitis
+      - pancreatitis
+      - fibromyalgia
+      - chronic fatigue syndrome
+      - lyme disease
+      - multiple sclerosis
+      - Parkinson's disease
+      - Alzheimer's disease
+      - dementia
+      - epilepsy
+      - bipolar disorder
+      - schizophrenia
+      - autism
+      - ADHD
+      - PTSD
+      - eating disorder
+      - obesity
+      - HIV/AIDS
+      - STI
+      - tuberculosis
+      - malaria
+      - dengue
+      - chikungunya
+      - zika virus
+      - measles
+      - mumps
+      - rubella
+      - chickenpox
+      - shingles
+      - whooping cough
+      - scarlet fever
+      - hand, foot, and mouth disease
+      - RSV
+      - mono
+      - meningitis
+      - encephalitis
 
-  - intent: inform_doctor
+  - intent: out_of_scope
     examples: |
-      - [Dr. Smith](appointment_doctor_name)
-      - [Brown](appointment_doctor_name)
-      - [Dr. John](appointment_doctor_name)
-      - [Dr. Williams](appointment_doctor_name)
-      - [Dr. Patel](appointment_doctor_name)
-      - [Dr. Lee](appointment_doctor_name)
-      - [Roberts](appointment_doctor_name)
-      - [Rohit](appointment_doctor_name)
-      - [Shyam](appointment_doctor_name)
-      - [Ankit](appointment_doctor_name)
-      - I want to see [Dr. Smith](appointment_doctor_name)
-      - Can I book an appointment with [Dr. Brown](appointment_doctor_name)?
-      - I need to consult with [John](appointment_doctor_name)
-      - I would like an appointment with [Dr. Williams](appointment_doctor_name)
-      - Please schedule an appointment with [Dr. Patel](appointment_doctor_name)
-      - I want an appointment with [Patel](appointment_doctor_name)
-      - Book me with [rohit](appointment_doctor_name)
-      - I would like to meet [Dr. Davis](appointment_doctor_name)
-      - Can I have an appointment with [Dr. Miller](appointment_doctor_name)?
+      - dummy
+      - love
+      - sexy
+      
+
+  # - intent: inform_doctor
+  #   examples: |
+  #     - [Dr. Smith](appointment_doctor_name)
+  #     - [Brown](appointment_doctor_name)
+  #     - [Dr. John](appointment_doctor_name)
+  #     - [Dr. Williams](appointment_doctor_name)
+  #     - [Dr. Patel](appointment_doctor_name)
+  #     - [Dr. Lee](appointment_doctor_name)
+  #     - [Roberts](appointment_doctor_name)
+  #     - [Rohit](appointment_doctor_name)
+  #     - [Shyam](appointment_doctor_name)
+  #     - [Ankit](appointment_doctor_name)
+  #     - I want to see [Dr. Smith](appointment_doctor_name)
+  #     - Can I book an appointment with [Dr. Brown](appointment_doctor_name)?
+  #     - I need to consult with [John](appointment_doctor_name)
+  #     - I would like an appointment with [Dr. Williams](appointment_doctor_name)
+  #     - Please schedule an appointment with [Dr. Patel](appointment_doctor_name)
+  #     - I want an appointment with [Patel](appointment_doctor_name)
+  #     - Book me with [rohit](appointment_doctor_name)
+  #     - I would like to meet [Dr. Davis](appointment_doctor_name)
+  #     - Can I have an appointment with [Dr. Miller](appointment_doctor_name)?
     
 
-  - intent: buy_policies_request 
-    examples: |
-      - need to by buy policies
-      - i would like to buy
+  # - intent: buy_policies_request 
+  #   examples: |
+  #     - need to by buy policies
+  #     - i would like to buy
 
-  - intent: list_policies
+  # - intent: list_policies
+  #   examples: |
+  #     - I want to see the insurance of aiqa health
+  #     - policies
+  #     - show me policies
+  #     - what kind of policies you shell
+
+  - intent: challenge_bot
     examples: |
-      - I want to see the insurance of aiqa health
-      - policies
-      - show me policies
-      - what kind of policies you shell
+      - whoyouare
+      - who you are
+      - r u a bot
+      - are you a human?
+
+
 

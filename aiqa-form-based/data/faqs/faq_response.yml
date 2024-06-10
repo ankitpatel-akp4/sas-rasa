@@ -1,6 +1,0 @@
-version: "3.1"
-responses:
-  utter_faq/ask_aboutaiqa:
-  - text: aiqahealth is on a mission to resolve unequal access to healthcare in India. While India’s middle class, and above, in Metros have very good access to the best healthcare facilities, of the doctors and the hospitals, people in tier 2 and tier 3 cities and blue-collar workers in metros don’t have such luxury. This stems from both, the lack of affordability and dearth of good medical specialists serving in tier 2 and 3 cities. Hence, most patients, whether due to lack of affordability or lack of availability, are forced to seek health care from untrained and unqualified providers. aiqahealth products provides affordable continued care for the in tier 2 and tier 3 cities and also in metros.
-  utter_faq/ask_help:
-  - text: "Sure, as an AI model am trained to help you with: appointments, plans/policies, claims related problems."
