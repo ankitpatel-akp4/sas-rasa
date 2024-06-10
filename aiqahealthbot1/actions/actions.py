@@ -68,7 +68,11 @@ class ActionGreet(Action):
             greeting = "Good afternoon"
         else:
             greeting = "Good evening"
-        dispatcher.utter_message(text=f"{greeting}, how can I assist you today?")
+        
+        sender_id = tracker.sender_id
+        name = sender_id.split("_")[-1]
+        
+        dispatcher.utter_message(text=f"{greeting} {name}, how can I assist you today?")
         # dispatcher.utter_message(text=f"{greeting}! I am aiqa bot. How can I assist you?")
         return [FollowupAction("action_listen")]    
 
@@ -78,10 +82,31 @@ class ActionMoodGreat(BaseCustomAction):
         return "action_mood_great"
 
     def action(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
-        dispatcher.utter_message(text=f"Wonderful! We offer exceptional health services. Take a look for yourself!")
+        dispatcher.utter_message(text=f"We offer exceptional health services. Take a look for yourself.")
         dispatcher.utter_message(text=key_appointment)
         return [FollowupAction("action_listen")]    
     
+class ActionRjBookConsultation(Action):
+
+    def name(self) -> str:
+        return "action_rj_book_consultation"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
+        # dispatcher.utter_message(text=f"We offer exceptional health services. Take a look for yourself.")
+        dispatcher.utter_message(text="consultation_template")
+        return [FollowupAction("action_listen")]    
+    
+class ActionRjBookClaim(Action):
+
+    def name(self) -> str:
+        return "action_rj_book_claim"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
+        # dispatcher.utter_message(text=f"We offer exceptional health services. Take a look for yourself.")
+        dispatcher.utter_message(text="claim_template")
+        return [FollowupAction("action_listen")]    
+    
+   
 class ActionAskBootMood(BaseCustomAction):
 
     def name(self) -> str:
@@ -142,7 +167,7 @@ class ActionAffirm(Action):
         elif confirm_question == "continue_with_appointment":
             return [FollowupAction("action_book_appointment")]
             
-        dispatcher.utter_message(text="Sorry, can you put more details regarding your inquery or call at +918756523281 for more support.")    
+        dispatcher.utter_message(text="Sorry, can you put more details regarding your inquery or call at +916262306306 for more support.")    
         return [FollowupAction("action_listen"), SlotSet("confirm_question", None)]
 
 class ActionDeny(Action):
@@ -157,7 +182,7 @@ class ActionDeny(Action):
         if confirm_question == "appointment_confirm":
             return [SlotSet("appointment_confirm", False), FollowupAction("action_book_appointment")]
         elif confirm_question == "continue_with_appointment":
-            dispatcher.utter_message(text="Wonderful! We offer exceptional health services. Take a look for yourself!")
+            dispatcher.utter_message(text="We offer exceptional health services. Take a look for yourself!")
             dispatcher.utter_message(text=key_appointment)
             
             return response_events + [SlotSet("current_active_form", None)] + [FollowupAction("action_listen")]
@@ -204,7 +229,7 @@ class ActionBookAppointment(Action):
         # return return_list + [SlotSet("current_active_form", self.name()), 
         #                       SlotSet("active_forms", list(set(tracker.get_slot("active_forms"))
         #                     .union(set([self.name()]))) if tracker.get_slot("active_forms") else [self.name()])]
-        dispatcher.utter_message(text="second_template")
+        dispatcher.utter_message(text=key_appointment)
         return return_list
         
         
@@ -254,7 +279,7 @@ class ActionInformSymptom(Action):
         # if current_active_form == "action_book_appointment":
         #     return [SlotSet("appointment_symptom", tracker.latest_message.get("text")), FollowupAction("action_book_appointment")]
         # else:
-        dispatcher.utter_message(text="I'm sorry to hear that.")
+        #dispatcher.utter_message(text="I'm sorry to hear that.")
         dispatcher.utter_message(text="We offer health services and can provide assistance if needed.")
         dispatcher.utter_message(text=key_appointment)
         return [FollowupAction("action_listen"), SlotSet("confirm_question", "continue_with_appointment")] + [SlotSet("current_active_form", "action_book_appointment"), 

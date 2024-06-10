@@ -96,6 +96,9 @@ nlu:
       - i m fine
       - feeling well
       - everything ok
+      - i am well
+      - i m well
+      - I am wel
 
 
   - intent: mood_unhappy
@@ -119,7 +122,7 @@ nlu:
   #     - am I talking to a bot?
   #     - am I talking to a human?
 
-  - intent: book_appointment
+  - intent: rj_book_consultation
     examples: |
       - I want to book an appointment
       - Can I schedule an appointment?
@@ -160,6 +163,12 @@ nlu:
       - I have a [backpain](appointment_symptom) and a [fever](appointment_symptom). can you book an appointment as soon as possible
       - I want to talk with doctor
       - I need to [consult with a doctor](services)
+      - doctor consultation  
+      - doctor  
+      - consultation
+      
+  - intent: rj_book_claim
+    examples: |
       - i want to raise my claim
       - How can I raise a claim for medical health insurance?
       - How to raise a claim?
@@ -350,15 +359,22 @@ nlu:
       - Steps to claime health insurence
       - How to get health insurence reimbursement?
       - Apply for medical insurence claime
+      - claim
+      - calime
+      - rezimbersment
+
+  - intent: book_appointment
+    examples: |
       - How to get a medical insurence [reimbursement](services)?
       - what you offer
       - what you do
-      - (services)
-
-      
-
-  - lookup: services
-    examples: |
+      - loan
+      - buy loan
+      - buy policy
+      - book policy
+      - book
+      - order
+      - place order
       - paln
       - plan
       - pln
@@ -369,17 +385,11 @@ nlu:
       - policy
       - helth 
       - helth policy
-      - consultation
       - health plans
-      - doctor consultation    
-      - claim
-      - calime
-      - rezimbersment
       - services
       - service
       - products
       - product
-      - doctor
       - docter
 
   # - intent: inform_date_time
@@ -511,9 +521,6 @@ nlu:
       - [influenza](symptom)
       - [asthma](symptom)
       - [dizzy](symptom)
-
-  - lookup: symptom
-    examples: |
       - fiver
       - diabetes
       - hypertension
@@ -622,6 +629,7 @@ nlu:
     examples: |
       - dummy
       - love
+      - sexy
       
 
   # - intent: inform_doctor

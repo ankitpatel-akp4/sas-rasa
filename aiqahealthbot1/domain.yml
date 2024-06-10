@@ -57,17 +57,20 @@ slots:
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
+  # - affirm
+  # - deny
   - book_appointment
-  - inform_date_time
+  # - inform_date_time
   - inform_symptom
-  - inform_doctor
+  # - inform_doctor
   - nlu_fallback
   - mood_great
   - mood_unhappy
-  - ask_boot_mood
+  # - ask_boot_mood
   - thank
+  # - challenge_bot
+  - rj_book_consultation
+  - rj_book_claim
   
 
 
@@ -86,6 +89,8 @@ actions:
   - action_mood_unhappy
   - action_ask_boot_mood
   - action_thank
+  - action_rj_book_consultation
+  - action_rj_book_claim
 
 
 responses:

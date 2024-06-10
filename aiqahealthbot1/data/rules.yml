@@ -14,15 +14,25 @@ rules:
       - intent: greet
       - action: action_greet
 
+  - rule: handle rj_book_consultation
+    steps:
+      - intent: rj_book_consultation
+      - action: action_rj_book_consultation
+
+  - rule: handle rj_book_claim
+    steps:
+      - intent: rj_book_claim
+      - action: action_rj_book_claim
+
   - rule: handle goodbye
     steps:
       - intent: goodbye
       - action: action_goodbye
 
-  - rule: handle challenge_bot
-    steps:
-      - intent: challenge_bot
-      - action: utter_challenge_bot
+  # - rule: handle challenge_bot
+  #   steps:
+  #     - intent: challenge_bot
+  #     - action: utter_challenge_bot
 
   # - rule: handle affirm
   #   steps:
@@ -39,10 +49,10 @@ rules:
       - intent: mood_great
       - action: action_mood_great
 
-  # - rule: handle ask_boot_mood
-  #   steps:
-  #     - intent: ask_boot_mood
-  #     - action: action_ask_boot_mood
+  - rule: handle ask_boot_mood
+    steps:
+      - intent: ask_boot_mood
+      - action: action_ask_boot_mood
 
   - rule: handle mood_unhappy
     steps:
